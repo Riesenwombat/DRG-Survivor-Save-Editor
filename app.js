@@ -12,6 +12,7 @@ const applyButton = document.querySelector("#applyButton");
 const expandButton = document.querySelector("#expandButton");
 const emptyState = document.querySelector("#emptyState");
 const dashboard = document.querySelector("#dashboard");
+const saveInfo = document.querySelector("#saveInfo");
 const resourceGrid = document.querySelector("#resourceGrid");
 const classGrid = document.querySelector("#classGrid");
 const metaGrid = document.querySelector("#metaGrid");
@@ -179,9 +180,18 @@ function renderDashboard() {
   dashboard.hidden = false;
   emptyState.hidden = true;
   renderResources();
+  renderSaveInfo();
   renderClasses();
   renderMetaUpgrades();
   renderItems();
+}
+
+function renderSaveInfo() {
+  const timestamp = saveData.Timestamp ?? "unknown";
+  const version = saveData.Version ?? "unknown";
+  const slotHint = originalName.match(/drg_save_slot(\d+)_(\d+)\.dat/i);
+  const slotText = slotHint ? `Slot ${slotHint[1]}, file ${slotHint[2]}` : "Unknown slot file";
+  saveInfo.textContent = `${originalName} | ${slotText} | Version ${version} | Timestamp ${timestamp}. Replace the active original save file after exporting.`;
 }
 
 function renderResources() {
@@ -587,7 +597,7 @@ function downloadSave() {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = originalName.replace(/(\.dat|\.json|\.txt)?$/i, "-edited.dat");
+  anchor.download = originalName;
   anchor.click();
   URL.revokeObjectURL(url);
   statusText.textContent = "Exportiert";
