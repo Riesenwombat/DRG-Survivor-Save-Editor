@@ -22,12 +22,9 @@ Typical save folder on Windows:
 
 ## GitHub Pages
 
-This repository includes a GitHub Actions workflow at
-`.github/workflows/pages.yml`. Every push to `main` publishes the static site
-to the `gh-pages` branch.
-
-In the repository settings, configure GitHub Pages with:
+This is a static HTML/CSS/JavaScript site and can be hosted directly with
+GitHub Pages. In the repository settings, configure GitHub Pages with:
 
 - Source: `Deploy from a branch`
-- Branch: `gh-pages`
+- Branch: `main`
 - Folder: `/ (root)`
