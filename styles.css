@@ -412,6 +412,16 @@ textarea {
   font-size: 0.78rem;
 }
 
+.test-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.test-actions button {
+  min-height: 34px;
+  padding: 0 10px;
+}
+
 .tree {
   height: 70vh;
   min-height: 560px;

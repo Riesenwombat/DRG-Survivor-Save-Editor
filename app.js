@@ -307,7 +307,10 @@ function renderItems() {
       <td>${renderStatEditors(item, index)}</td>
       <td>${renderTraitEditors(item, index)}</td>
       <td><input type="checkbox" data-item-index="${index}" data-field="N" ${item.N ? "checked" : ""} /></td>
-      <td><button type="button" data-item-index="${index}" data-action="test-quirks">Create copies</button></td>
+      <td class="test-actions">
+        <button type="button" data-item-index="${index}" data-action="test-rare-quirks">Rare</button>
+        <button type="button" data-item-index="${index}" data-action="test-legendary-quirks">Legendary</button>
+      </td>
     `;
     body.append(row);
   });
@@ -449,14 +452,14 @@ function handleItemFieldChange(event) {
 
 function handleItemActionClick(event) {
   const action = event.target.dataset.action;
-  if (action !== "test-quirks") return;
+  if (action !== "test-rare-quirks" && action !== "test-legendary-quirks") return;
   const index = Number(event.target.dataset.itemIndex);
   if (!Number.isInteger(index) || !Array.isArray(saveData.GearSaveData)) return;
-  createQuirkTestCopies(saveData.GearSaveData[index]);
+  createQuirkTestCopies(saveData.GearSaveData[index], action === "test-rare-quirks" ? "RQ" : "LQ");
   markChanged();
 }
 
-function createQuirkTestCopies(item) {
+function createQuirkTestCopies(item, field) {
   const existingHcs = new Set(saveData.GearSaveData.map((gear) => Number(gear.HC)));
   const base = Math.abs(Number(item.HC) || hashString(item.ID));
 
@@ -467,13 +470,13 @@ function createQuirkTestCopies(item) {
     copy.L = 90 + index;
     copy.U = Math.max(Number(copy.U) || 0, 3);
     copy.N = true;
-    copy.RQ = index;
-    copy.LQ = index;
+    copy.RQ = field === "RQ" ? index : Number(item.RQ) || 0;
+    copy.LQ = field === "LQ" ? index : Number(item.LQ) || 0;
     copy.F = 0;
     saveData.GearSaveData.push(copy);
   }
 
-  statusText.textContent = "Quirk-Testkopien erstellt";
+  statusText.textContent = `${field}-Testkopien erstellt`;
 }
 
 function cloneJson(value) {

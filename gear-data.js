@@ -12,9 +12,11 @@ window.DRG_GEAR_DATA = {
     "7159c449-21de-487f-af36-ec991507d72e": {
       RQ: {
         0: "Elite killed: +critical damage",
+        1: "Boss spawned: +reload speed",
       },
       LQ: {
         0: "Elite spawned: +max HP",
+        1: "Boss spawned: +reload speed",
       },
     },
     "c7b0ae37-9ed5-4a93-a7c0-be239174c74f": {
