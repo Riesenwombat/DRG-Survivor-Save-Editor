@@ -91,6 +91,7 @@ const signLabels = {
   0: "Neutral",
   1: "Positive",
 };
+const gearData = window.DRG_GEAR_DATA ?? { names: {}, observedQuirks: {}, discoveredQuirkNames: [] };
 
 fileInput.addEventListener("change", handleFileSelect);
 downloadButton.addEventListener("click", downloadSave);
@@ -267,7 +268,7 @@ function renderItems() {
   table.innerHTML = `
     <thead>
       <tr>
-        <th>Item ID</th>
+        <th>Item</th>
         <th>Instance</th>
         <th>Equipped</th>
         <th>Rarity</th>
@@ -286,7 +287,7 @@ function renderItems() {
     const index = items.indexOf(item);
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td title="${escapeHtml(item.ID)}">${escapeHtml(shortId(item.ID))}</td>
+      <td title="${escapeHtml(item.ID)}">${escapeHtml(getGearName(item))}</td>
       <td>${escapeHtml(String(item.HC ?? ""))}</td>
       <td>${escapeHtml(equippedMap.get(String(item.HC))?.join(", ") ?? "-")}</td>
       <td>
@@ -376,16 +377,21 @@ function renderTraitEditors(item, index) {
         <label class="trait-editor">
           <span>${traitFieldLabels[field] ?? field}</span>
           <select data-item-index="${index}" data-field="${field}">
-            ${Object.entries(traitLabels)
-              .map(
-                ([value, label]) =>
-                  `<option value="${value}" ${Number(value) === item[field] ? "selected" : ""}>${label}</option>`,
-              )
-              .join("")}
+            ${renderQuirkOptions(item, field)}
           </select>
         </label>
       `,
     )
+    .join("");
+}
+
+function renderQuirkOptions(item, field) {
+  const observed = gearData.observedQuirks?.[item.ID]?.[field] ?? {};
+  return Object.entries(traitLabels)
+    .map(([value, label]) => {
+      const observedLabel = observed[value] ? `${label}: ${observed[value]}` : label;
+      return `<option value="${value}" ${Number(value) === item[field] ? "selected" : ""}>${escapeHtml(observedLabel)}</option>`;
+    })
     .join("");
 }
 
@@ -637,6 +643,11 @@ function shortId(value) {
   if (!value) return "";
   const text = String(value);
   return text.length > 18 ? `${text.slice(0, 8)}...${text.slice(-6)}` : text;
+}
+
+function getGearName(item) {
+  const name = gearData.names?.[item.ID];
+  return name ? `${name} (${shortId(item.ID)})` : shortId(item.ID);
 }
 
 function countLeaves(value) {
