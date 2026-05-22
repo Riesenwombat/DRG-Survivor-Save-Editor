@@ -21,6 +21,7 @@ const maxResourcesButton = document.querySelector("#maxResourcesButton");
 const maxMetaButton = document.querySelector("#maxMetaButton");
 const legendaryItemsButton = document.querySelector("#legendaryItemsButton");
 const maxItemsButton = document.querySelector("#maxItemsButton");
+const itemScopeFilter = document.querySelector("#itemScopeFilter");
 const itemRarityFilter = document.querySelector("#itemRarityFilter");
 const tree = document.querySelector("#tree");
 
@@ -94,6 +95,7 @@ maxResourcesButton.addEventListener("click", setHighResources);
 maxMetaButton.addEventListener("click", maxMetaUpgrades);
 legendaryItemsButton.addEventListener("click", makeAllItemsLegendary);
 maxItemsButton.addEventListener("click", maxItemLevels);
+itemScopeFilter.addEventListener("change", renderDashboard);
 itemRarityFilter.addEventListener("change", renderDashboard);
 
 resourceGrid.addEventListener("change", handleNumberFieldChange);
@@ -219,8 +221,16 @@ function renderMetaUpgrades() {
 function renderItems() {
   itemTable.innerHTML = "";
   const items = Array.isArray(saveData.GearSaveData) ? saveData.GearSaveData : [];
+  const equippedMap = getEquippedGearMap();
+  const scope = itemScopeFilter.value;
   const filter = itemRarityFilter.value;
-  const visibleItems = filter === "all" ? items : items.filter((item) => String(item.R) === filter);
+  const scopedItems = items.filter((item) => {
+    const isEquipped = equippedMap.has(String(item.HC));
+    if (scope === "equipped") return isEquipped;
+    if (scope === "unequipped") return !isEquipped;
+    return true;
+  });
+  const visibleItems = filter === "all" ? scopedItems : scopedItems.filter((item) => String(item.R) === filter);
   const rarityCounts = items.reduce((counts, item) => {
     const key = rarityLabels[item.R] ?? `Rarity ${item.R}`;
     counts[key] = (counts[key] ?? 0) + 1;
@@ -228,7 +238,7 @@ function renderItems() {
   }, {});
 
   itemSummary.textContent = items.length
-    ? `${items.length} items found. ${Object.entries(rarityCounts)
+    ? `${items.length} collected, ${equippedMap.size} equipped, ${visibleItems.length} shown. ${Object.entries(rarityCounts)
         .map(([rarity, count]) => `${rarity}: ${count}`)
         .join(" | ")}`
     : "No GearSaveData items found in this save.";
@@ -244,6 +254,7 @@ function renderItems() {
       <tr>
         <th>Item ID</th>
         <th>Instance</th>
+        <th>Equipped</th>
         <th>Rarity</th>
         <th>Level</th>
         <th>Upgrades</th>
@@ -262,6 +273,7 @@ function renderItems() {
     row.innerHTML = `
       <td title="${escapeHtml(item.ID)}">${escapeHtml(shortId(item.ID))}</td>
       <td>${escapeHtml(String(item.HC ?? ""))}</td>
+      <td>${escapeHtml(equippedMap.get(String(item.HC))?.join(", ") ?? "-")}</td>
       <td>
         <select data-item-index="${index}" data-field="R">
           ${Object.entries(rarityLabels)
@@ -282,6 +294,34 @@ function renderItems() {
   });
 
   itemTable.append(table);
+}
+
+function getEquippedGearMap() {
+  const map = new Map();
+  const equippedGear = Array.isArray(saveData.EquippedGear) ? saveData.EquippedGear : [];
+  const slotNames = {
+    A: "Armor",
+    C: "Class",
+    G: "Grenade",
+    Ta: "Tag",
+    To: "Tool",
+    W: "Weapon",
+  };
+
+  equippedGear.forEach((loadout, loadoutIndex) => {
+    for (const [slot, label] of Object.entries(slotNames)) {
+      const values = Array.isArray(loadout[slot]) ? loadout[slot] : [];
+      values.forEach((hc) => {
+        const key = String(hc);
+        const entries = map.get(key) ?? [];
+        const value = `${label} L${loadoutIndex + 1}`;
+        if (!entries.includes(value)) entries.push(value);
+        map.set(key, entries);
+      });
+    }
+  });
+
+  return map;
 }
 
 function renderStatEditors(item, index) {
