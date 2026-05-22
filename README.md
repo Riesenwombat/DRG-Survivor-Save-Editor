@@ -1,22 +1,20 @@
 # DRG Survivor Save Editor
 
-Save Editor for DRG Survivor.
+A local browser-based save editor for **Deep Rock Galactic: Survivor**.
 
-Ein lokaler Browser-Save-Editor fuer **Deep Rock Galactic: Survivor**.
+The app loads save files directly in your browser, displays the JSON structure
+as an editable tree, lets you change individual values, and exports an edited
+`.dat` file. No save data is uploaded to a server.
 
-Die App laedt Save-Dateien direkt im Browser, zeigt die JSON-Struktur als Baum an,
-erlaubt das Bearbeiten einzelner Werte und exportiert eine bearbeitete `.dat`-Datei.
-Es werden keine Save-Daten an einen Server gesendet.
+## Usage
 
-## Nutzung
+1. Back up your original save file.
+2. Open `index.html` in your browser or use the GitHub Pages version.
+3. Load your save file.
+4. Edit the values you want to change.
+5. Download the edited `.dat` file and copy it back into the save folder.
 
-1. Original-Save sichern.
-2. `index.html` im Browser oeffnen oder die GitHub-Pages-Seite nutzen.
-3. Save-Datei laden.
-4. Werte bearbeiten.
-5. Bearbeitete `.dat` herunterladen und selbst in den Save-Ordner kopieren.
-
-Typischer Save-Ordner unter Windows:
+Typical save folder on Windows:
 
 ```text
 %USERPROFILE%\AppData\LocalLow\Funday Games\DRG Survivor
@@ -24,6 +22,6 @@ Typischer Save-Ordner unter Windows:
 
 ## GitHub Pages
 
-Dieses Repo enthaelt eine GitHub-Actions-Konfiguration unter
-`.github/workflows/pages.yml`. Nach dem Push auf `main` wird die statische Seite
-automatisch via GitHub Pages deployed.
+This repository includes a GitHub Actions workflow at
+`.github/workflows/pages.yml`. Every push to `main` automatically deploys the
+static site through GitHub Pages.
