@@ -23,5 +23,11 @@ Typical save folder on Windows:
 ## GitHub Pages
 
 This repository includes a GitHub Actions workflow at
-`.github/workflows/pages.yml`. Every push to `main` automatically deploys the
-static site through GitHub Pages.
+`.github/workflows/pages.yml`. Every push to `main` publishes the static site
+to the `gh-pages` branch.
+
+In the repository settings, configure GitHub Pages with:
+
+- Source: `Deploy from a branch`
+- Branch: `gh-pages`
+- Folder: `/ (root)`
