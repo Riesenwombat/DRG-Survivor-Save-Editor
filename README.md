@@ -1,5 +1,7 @@
 # DRG Survivor Save Editor
 
+Save Editor for DRG Survivor.
+
 Ein lokaler Browser-Save-Editor fuer **Deep Rock Galactic: Survivor**.
 
 Die App laedt Save-Dateien direkt im Browser, zeigt die JSON-Struktur als Baum an,
@@ -25,4 +27,3 @@ Typischer Save-Ordner unter Windows:
 Dieses Repo enthaelt eine GitHub-Actions-Konfiguration unter
 `.github/workflows/pages.yml`. Nach dem Push auf `main` wird die statische Seite
 automatisch via GitHub Pages deployed.
-
