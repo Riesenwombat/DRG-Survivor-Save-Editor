@@ -37,6 +37,53 @@ const rarityLabels = {
   3: "Epic",
   4: "Legendary",
 };
+const statLabels = {
+  0: "Stat 0",
+  1: "Stat 1",
+  2: "Stat 2",
+  3: "Stat 3",
+  4: "Fire rate",
+  5: "Stat 5",
+  6: "Critical damage",
+  7: "Stat 7",
+  8: "Stat 8",
+  9: "Stat 9",
+  10: "Status effect damage",
+  11: "Damage",
+  12: "Stat 12",
+  13: "Stat 13",
+  14: "Reload speed",
+  15: "Stat 15",
+  16: "Stat 16",
+  17: "Weapon range",
+  18: "Stat 18",
+  19: "Stat 19",
+  20: "Luck",
+  21: "Stat 21",
+  22: "Stat 22",
+  23: "Stat 23",
+  24: "Stat 24",
+  25: "Stat 25",
+  26: "Potency",
+};
+const traitLabels = {
+  0: "Trait 0",
+  1: "Trait 1",
+  2: "Trait 2",
+  3: "Trait 3",
+  4: "Trait 4",
+  5: "Trait 5",
+  6: "Trait 6",
+  7: "Trait 7",
+  8: "Trait 8",
+  9: "Trait 9",
+  10: "Trait 10",
+};
+const signLabels = {
+  "-1": "Negative",
+  0: "Neutral",
+  1: "Positive",
+};
 
 fileInput.addEventListener("change", handleFileSelect);
 downloadButton.addEventListener("click", downloadSave);
@@ -200,8 +247,9 @@ function renderItems() {
         <th>Rarity</th>
         <th>Level</th>
         <th>Upgrades</th>
+        <th>Stats</th>
+        <th>Traits</th>
         <th>New</th>
-        <th>Flags</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -226,13 +274,64 @@ function renderItems() {
       </td>
       <td><input type="number" min="0" data-item-index="${index}" data-field="L" value="${item.L ?? 0}" /></td>
       <td><input type="number" min="0" data-item-index="${index}" data-field="U" value="${item.U ?? 0}" /></td>
+      <td>${renderStatEditors(item, index)}</td>
+      <td>${renderTraitEditors(item, index)}</td>
       <td><input type="checkbox" data-item-index="${index}" data-field="N" ${item.N ? "checked" : ""} /></td>
-      <td>RQ ${item.RQ ?? 0} / LQ ${item.LQ ?? 0} / F ${item.F ?? 0}</td>
     `;
     body.append(row);
   });
 
   itemTable.append(table);
+}
+
+function renderStatEditors(item, index) {
+  const stats = Array.isArray(item.S) ? item.S : [];
+  const signs = Array.isArray(item.SG) ? item.SG : [];
+  return [0, 1, 2]
+    .map(
+      (slot) => `
+        <div class="stat-editor">
+          <select data-item-index="${index}" data-array="S" data-slot="${slot}">
+            <option value="">Empty</option>
+            ${Object.entries(statLabels)
+              .map(
+                ([value, label]) =>
+                  `<option value="${value}" ${Number(value) === stats[slot] ? "selected" : ""}>${label}</option>`,
+              )
+              .join("")}
+          </select>
+          <select data-item-index="${index}" data-array="SG" data-slot="${slot}">
+            ${Object.entries(signLabels)
+              .map(
+                ([value, label]) =>
+                  `<option value="${value}" ${Number(value) === signs[slot] ? "selected" : ""}>${label}</option>`,
+              )
+              .join("")}
+          </select>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+function renderTraitEditors(item, index) {
+  return ["RQ", "LQ", "F"]
+    .map(
+      (field) => `
+        <label class="trait-editor">
+          <span>${field}</span>
+          <select data-item-index="${index}" data-field="${field}">
+            ${Object.entries(traitLabels)
+              .map(
+                ([value, label]) =>
+                  `<option value="${value}" ${Number(value) === item[field] ? "selected" : ""}>${label}</option>`,
+              )
+              .join("")}
+          </select>
+        </label>
+      `,
+    )
+    .join("");
 }
 
 function createNumberField(label, key, value) {
@@ -271,12 +370,37 @@ function handleMetaFieldChange(event) {
 function handleItemFieldChange(event) {
   const index = Number(event.target.dataset.itemIndex);
   const field = event.target.dataset.field;
-  if (!Number.isInteger(index) || !field || !Array.isArray(saveData.GearSaveData)) return;
+  const arrayField = event.target.dataset.array;
+  if (!Number.isInteger(index) || !Array.isArray(saveData.GearSaveData)) return;
 
   const item = saveData.GearSaveData[index];
-  item[field] = event.target.type === "checkbox" ? event.target.checked : parseInputNumber(event.target.value);
+  if (arrayField) {
+    updateItemArrayField(item, arrayField, Number(event.target.dataset.slot), event.target.value);
+  } else if (field) {
+    item[field] = event.target.type === "checkbox" ? event.target.checked : parseInputNumber(event.target.value);
+  }
   markChanged();
   renderItems();
+}
+
+function updateItemArrayField(item, arrayField, slot, rawValue) {
+  if (!Number.isInteger(slot)) return;
+  item.S = Array.isArray(item.S) ? item.S : [];
+  item.SG = Array.isArray(item.SG) ? item.SG : [];
+  item.ST = Array.isArray(item.ST) ? item.ST : [];
+
+  if (arrayField === "S" && rawValue === "") {
+    item.S.splice(slot, 1);
+    item.SG.splice(slot, 1);
+    item.ST.splice(slot, 1);
+    return;
+  }
+
+  while (item.S.length <= slot) item.S.push(0);
+  while (item.SG.length <= slot) item.SG.push(1);
+  while (item.ST.length <= slot) item.ST.push(item.ST.length);
+
+  item[arrayField][slot] = parseInputNumber(rawValue);
 }
 
 function setHighResources() {
@@ -298,6 +422,7 @@ function makeAllItemsLegendary() {
   if (!Array.isArray(saveData.GearSaveData)) return;
   saveData.GearSaveData.forEach((item) => {
     item.R = 4;
+    item.U = Math.max(Number(item.U) || 0, 3);
   });
   markChanged();
 }

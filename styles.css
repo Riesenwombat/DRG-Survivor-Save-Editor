@@ -357,7 +357,7 @@ textarea {
 
 .item-table table {
   width: 100%;
-  min-width: 860px;
+  min-width: 1160px;
   border-collapse: collapse;
   font-size: 0.86rem;
 }
@@ -388,6 +388,24 @@ textarea {
   width: 18px;
   min-width: 18px;
   height: 18px;
+}
+
+.stat-editor,
+.trait-editor {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) minmax(92px, 0.7fr);
+  gap: 6px;
+  margin: 3px 0;
+}
+
+.trait-editor {
+  grid-template-columns: 34px minmax(112px, 1fr);
+  align-items: center;
+}
+
+.trait-editor span {
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .tree {
