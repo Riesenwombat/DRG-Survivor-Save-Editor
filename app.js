@@ -11,6 +11,17 @@ const valueEditor = document.querySelector("#valueEditor");
 const applyButton = document.querySelector("#applyButton");
 const expandButton = document.querySelector("#expandButton");
 const emptyState = document.querySelector("#emptyState");
+const dashboard = document.querySelector("#dashboard");
+const resourceGrid = document.querySelector("#resourceGrid");
+const classGrid = document.querySelector("#classGrid");
+const metaGrid = document.querySelector("#metaGrid");
+const itemSummary = document.querySelector("#itemSummary");
+const itemTable = document.querySelector("#itemTable");
+const maxResourcesButton = document.querySelector("#maxResourcesButton");
+const maxMetaButton = document.querySelector("#maxMetaButton");
+const legendaryItemsButton = document.querySelector("#legendaryItemsButton");
+const maxItemsButton = document.querySelector("#maxItemsButton");
+const itemRarityFilter = document.querySelector("#itemRarityFilter");
 const tree = document.querySelector("#tree");
 
 let saveData = null;
@@ -18,11 +29,30 @@ let originalName = "drg-survivor-save.dat";
 let selected = null;
 let allExpanded = false;
 
+const resourceFields = ["Credits", "Bismor", "Croppa", "EnorPearl", "Jadiz", "Magnite", "Umanite", "PowerCore"];
+const rarityLabels = {
+  0: "Common",
+  1: "Uncommon",
+  2: "Rare",
+  3: "Epic",
+  4: "Legendary",
+};
+
 fileInput.addEventListener("change", handleFileSelect);
 downloadButton.addEventListener("click", downloadSave);
 searchInput.addEventListener("input", renderTree);
 applyButton.addEventListener("click", applySelectedValue);
 expandButton.addEventListener("click", toggleExpandAll);
+maxResourcesButton.addEventListener("click", setHighResources);
+maxMetaButton.addEventListener("click", maxMetaUpgrades);
+legendaryItemsButton.addEventListener("click", makeAllItemsLegendary);
+maxItemsButton.addEventListener("click", maxItemLevels);
+itemRarityFilter.addEventListener("change", renderDashboard);
+
+resourceGrid.addEventListener("change", handleNumberFieldChange);
+classGrid.addEventListener("change", handleClassFieldChange);
+metaGrid.addEventListener("change", handleMetaFieldChange);
+itemTable.addEventListener("change", handleItemFieldChange);
 
 quickButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -45,10 +75,12 @@ async function handleFileSelect(event) {
     statusText.textContent = "Geladen";
     entryCount.textContent = countLeaves(saveData).toLocaleString("de-DE");
     setControlsEnabled(true);
+    renderDashboard();
     renderTree();
   } catch (error) {
     saveData = null;
     setControlsEnabled(false);
+    dashboard.hidden = true;
     tree.hidden = true;
     emptyState.hidden = false;
     statusText.innerHTML = `<span class="error">Konnte JSON nicht lesen</span>`;
@@ -78,6 +110,7 @@ function renderTree() {
   tree.innerHTML = "";
   tree.hidden = false;
   emptyState.hidden = true;
+  dashboard.hidden = false;
 
   const query = searchInput.value.trim().toLowerCase();
   const fragment = document.createDocumentFragment();
@@ -90,6 +123,199 @@ function renderTree() {
     depth: 0,
   });
   tree.append(fragment);
+}
+
+function renderDashboard() {
+  if (!saveData) return;
+  dashboard.hidden = false;
+  emptyState.hidden = true;
+  renderResources();
+  renderClasses();
+  renderMetaUpgrades();
+  renderItems();
+}
+
+function renderResources() {
+  resourceGrid.innerHTML = "";
+  for (const field of resourceFields) {
+    resourceGrid.append(createNumberField(field, field, saveData[field] ?? 0));
+  }
+}
+
+function renderClasses() {
+  classGrid.innerHTML = "";
+  const ranks = Array.isArray(saveData.ClassRanks) ? saveData.ClassRanks : [];
+  if (!ranks.length) {
+    classGrid.innerHTML = `<p class="muted">No class rank data found in this save.</p>`;
+    return;
+  }
+
+  ranks.forEach((entry, index) => {
+    classGrid.append(createNumberField(`Class ${entry.ClassType} rank`, `class:${index}:Rank`, entry.Rank ?? 0));
+    classGrid.append(createNumberField(`Class ${entry.ClassType} XP`, `class:${index}:Xp`, entry.Xp ?? 0));
+  });
+}
+
+function renderMetaUpgrades() {
+  metaGrid.innerHTML = "";
+  const upgrades = Array.isArray(saveData.MetaStatUpgrades) ? saveData.MetaStatUpgrades : [];
+  if (!upgrades.length) {
+    metaGrid.innerHTML = `<p class="muted">No meta upgrade data found in this save.</p>`;
+    return;
+  }
+
+  upgrades.forEach((entry, index) => {
+    metaGrid.append(createNumberField(entry.Id, `meta:${index}:Level`, entry.Level ?? 0));
+  });
+}
+
+function renderItems() {
+  itemTable.innerHTML = "";
+  const items = Array.isArray(saveData.GearSaveData) ? saveData.GearSaveData : [];
+  const filter = itemRarityFilter.value;
+  const visibleItems = filter === "all" ? items : items.filter((item) => String(item.R) === filter);
+  const rarityCounts = items.reduce((counts, item) => {
+    const key = rarityLabels[item.R] ?? `Rarity ${item.R}`;
+    counts[key] = (counts[key] ?? 0) + 1;
+    return counts;
+  }, {});
+
+  itemSummary.textContent = items.length
+    ? `${items.length} items found. ${Object.entries(rarityCounts)
+        .map(([rarity, count]) => `${rarity}: ${count}`)
+        .join(" | ")}`
+    : "No GearSaveData items found in this save.";
+
+  if (!visibleItems.length) {
+    itemTable.innerHTML = `<p class="muted">No items match the current filter.</p>`;
+    return;
+  }
+
+  const table = document.createElement("table");
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Instance</th>
+        <th>Rarity</th>
+        <th>Level</th>
+        <th>Upgrades</th>
+        <th>New</th>
+        <th>Flags</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  `;
+
+  const body = table.querySelector("tbody");
+  visibleItems.forEach((item) => {
+    const index = items.indexOf(item);
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td title="${escapeHtml(item.ID)}">${escapeHtml(shortId(item.ID))}</td>
+      <td>${escapeHtml(String(item.HC ?? ""))}</td>
+      <td>
+        <select data-item-index="${index}" data-field="R">
+          ${Object.entries(rarityLabels)
+            .map(
+              ([value, label]) =>
+                `<option value="${value}" ${Number(value) === item.R ? "selected" : ""}>${label}</option>`,
+            )
+            .join("")}
+        </select>
+      </td>
+      <td><input type="number" min="0" data-item-index="${index}" data-field="L" value="${item.L ?? 0}" /></td>
+      <td><input type="number" min="0" data-item-index="${index}" data-field="U" value="${item.U ?? 0}" /></td>
+      <td><input type="checkbox" data-item-index="${index}" data-field="N" ${item.N ? "checked" : ""} /></td>
+      <td>RQ ${item.RQ ?? 0} / LQ ${item.LQ ?? 0} / F ${item.F ?? 0}</td>
+    `;
+    body.append(row);
+  });
+
+  itemTable.append(table);
+}
+
+function createNumberField(label, key, value) {
+  const wrapper = document.createElement("label");
+  wrapper.className = "number-field";
+  wrapper.innerHTML = `
+    <span>${escapeHtml(label)}</span>
+    <input type="number" data-key="${escapeHtml(key)}" value="${Number(value) || 0}" />
+  `;
+  return wrapper;
+}
+
+function handleNumberFieldChange(event) {
+  const key = event.target.dataset.key;
+  if (!key || !resourceFields.includes(key)) return;
+  saveData[key] = parseInputNumber(event.target.value);
+  markChanged();
+}
+
+function handleClassFieldChange(event) {
+  const key = event.target.dataset.key;
+  if (!key) return;
+  const [, index, field] = key.split(":");
+  saveData.ClassRanks[Number(index)][field] = parseInputNumber(event.target.value);
+  markChanged();
+}
+
+function handleMetaFieldChange(event) {
+  const key = event.target.dataset.key;
+  if (!key) return;
+  const [, index, field] = key.split(":");
+  saveData.MetaStatUpgrades[Number(index)][field] = parseInputNumber(event.target.value);
+  markChanged();
+}
+
+function handleItemFieldChange(event) {
+  const index = Number(event.target.dataset.itemIndex);
+  const field = event.target.dataset.field;
+  if (!Number.isInteger(index) || !field || !Array.isArray(saveData.GearSaveData)) return;
+
+  const item = saveData.GearSaveData[index];
+  item[field] = event.target.type === "checkbox" ? event.target.checked : parseInputNumber(event.target.value);
+  markChanged();
+  renderItems();
+}
+
+function setHighResources() {
+  for (const field of resourceFields) {
+    if (field in saveData) saveData[field] = 999999;
+  }
+  markChanged();
+}
+
+function maxMetaUpgrades() {
+  if (!Array.isArray(saveData.MetaStatUpgrades)) return;
+  saveData.MetaStatUpgrades.forEach((upgrade) => {
+    upgrade.Level = Math.max(Number(upgrade.Level) || 0, 24);
+  });
+  markChanged();
+}
+
+function makeAllItemsLegendary() {
+  if (!Array.isArray(saveData.GearSaveData)) return;
+  saveData.GearSaveData.forEach((item) => {
+    item.R = 4;
+  });
+  markChanged();
+}
+
+function maxItemLevels() {
+  if (!Array.isArray(saveData.GearSaveData)) return;
+  saveData.GearSaveData.forEach((item) => {
+    item.L = Math.max(Number(item.L) || 0, 100);
+    item.U = Math.max(Number(item.U) || 0, 3);
+  });
+  markChanged();
+}
+
+function markChanged() {
+  statusText.textContent = "Geändert";
+  entryCount.textContent = countLeaves(saveData).toLocaleString("de-DE");
+  renderDashboard();
+  renderTree();
 }
 
 function renderNode({ parent, key, value, path, query, depth }) {
@@ -220,6 +446,17 @@ function previewValue(value) {
   if (type === "object") return `{${Object.keys(value).length}}`;
   if (type === "string") return `"${value}"`;
   return String(value);
+}
+
+function parseInputNumber(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : 0;
+}
+
+function shortId(value) {
+  if (!value) return "";
+  const text = String(value);
+  return text.length > 18 ? `${text.slice(0, 8)}...${text.slice(-6)}` : text;
 }
 
 function countLeaves(value) {

@@ -82,6 +82,50 @@
             </p>
             <code>%USERPROFILE%\AppData\LocalLow\Funday Games\DRG Survivor</code>
           </div>
+          <div id="dashboard" class="dashboard" hidden>
+            <section class="tool-section">
+              <div class="section-heading">
+                <h3>Resources</h3>
+                <button id="maxResourcesButton" type="button">Set high values</button>
+              </div>
+              <div id="resourceGrid" class="field-grid"></div>
+            </section>
+
+            <section class="tool-section">
+              <div class="section-heading">
+                <h3>Classes</h3>
+              </div>
+              <div id="classGrid" class="field-grid"></div>
+            </section>
+
+            <section class="tool-section">
+              <div class="section-heading">
+                <h3>Meta Upgrades</h3>
+                <button id="maxMetaButton" type="button">Max levels</button>
+              </div>
+              <div id="metaGrid" class="field-grid"></div>
+            </section>
+
+            <section class="tool-section item-section">
+              <div class="section-heading">
+                <h3>Items / Gear</h3>
+                <div class="inline-actions">
+                  <select id="itemRarityFilter" aria-label="Item rarity filter">
+                    <option value="all">All rarities</option>
+                    <option value="4">Legendary</option>
+                    <option value="3">Epic</option>
+                    <option value="2">Rare</option>
+                    <option value="1">Uncommon</option>
+                    <option value="0">Common</option>
+                  </select>
+                  <button id="legendaryItemsButton" type="button">Make all legendary</button>
+                  <button id="maxItemsButton" type="button">Max item levels</button>
+                </div>
+              </div>
+              <div id="itemSummary" class="summary-line"></div>
+              <div id="itemTable" class="item-table"></div>
+            </section>
+          </div>
           <div id="tree" class="tree" hidden></div>
         </section>
       </section>
