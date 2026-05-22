@@ -69,17 +69,22 @@ const statLabels = {
   26: "Potency",
 };
 const traitLabels = {
-  0: "Trait 0",
-  1: "Trait 1",
-  2: "Trait 2",
-  3: "Trait 3",
-  4: "Trait 4",
-  5: "Trait 5",
-  6: "Trait 6",
-  7: "Trait 7",
-  8: "Trait 8",
-  9: "Trait 9",
-  10: "Trait 10",
+  0: "Index 0",
+  1: "Index 1",
+  2: "Index 2",
+  3: "Index 3",
+  4: "Index 4",
+  5: "Index 5",
+  6: "Index 6",
+  7: "Index 7",
+  8: "Index 8",
+  9: "Index 9",
+  10: "Index 10",
+};
+const traitFieldLabels = {
+  RQ: "Rare quirk",
+  LQ: "Legendary quirk",
+  F: "Flag",
 };
 const signLabels = {
   "-1": "Negative",
@@ -269,7 +274,7 @@ function renderItems() {
         <th>Level</th>
         <th>Upgrades</th>
         <th>Stats</th>
-        <th>Traits</th>
+        <th>Quirks</th>
         <th>New</th>
       </tr>
     </thead>
@@ -369,7 +374,7 @@ function renderTraitEditors(item, index) {
     .map(
       (field) => `
         <label class="trait-editor">
-          <span>${field}</span>
+          <span>${traitFieldLabels[field] ?? field}</span>
           <select data-item-index="${index}" data-field="${field}">
             ${Object.entries(traitLabels)
               .map(
