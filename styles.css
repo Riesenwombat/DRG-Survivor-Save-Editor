@@ -344,6 +344,10 @@ textarea {
   font-size: 0.82rem;
 }
 
+.warning-line {
+  color: var(--accent);
+}
+
 .item-section {
   min-width: 0;
 }
