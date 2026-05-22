@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRG Survivor Save Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Deep Rock Galactic: Survivor</p>
+          <h1>Save Editor</h1>
+        </div>
+        <div class="actions">
+          <label class="file-button">
+            <input id="fileInput" type="file" accept=".dat,.json,.txt,application/json" />
+            Datei öffnen
+          </label>
+          <button id="downloadButton" type="button" disabled>Save herunterladen</button>
+        </div>
+      </header>
+
+      <section class="status-band" aria-live="polite">
+        <div>
+          <span class="status-label">Datei</span>
+          <strong id="fileName">Noch keine Datei geladen</strong>
+        </div>
+        <div>
+          <span class="status-label">Einträge</span>
+          <strong id="entryCount">0</strong>
+        </div>
+        <div>
+          <span class="status-label">Status</span>
+          <strong id="statusText">Bereit</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar">
+          <div class="panel">
+            <h2>Schnellsuche</h2>
+            <input id="searchInput" type="search" placeholder="credits, xp, perk, weapon..." disabled />
+            <div class="quick-buttons" aria-label="Häufige Suchbegriffe">
+              <button type="button" data-query="credit" disabled>Credits</button>
+              <button type="button" data-query="resource" disabled>Ressourcen</button>
+              <button type="button" data-query="xp" disabled>XP</button>
+              <button type="button" data-query="perk" disabled>Perks</button>
+              <button type="button" data-query="weapon" disabled>Waffen</button>
+              <button type="button" data-query="class" disabled>Klassen</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Ausgewählter Wert</h2>
+            <p id="selectedPath" class="path-text">Kein Eintrag ausgewählt</p>
+            <label for="valueType">Typ</label>
+            <select id="valueType" disabled>
+              <option value="string">Text</option>
+              <option value="number">Zahl</option>
+              <option value="boolean">Boolean</option>
+              <option value="null">Null</option>
+              <option value="json">JSON</option>
+            </select>
+            <label for="valueEditor">Wert</label>
+            <textarea id="valueEditor" rows="8" disabled></textarea>
+            <button id="applyButton" type="button" disabled>Wert übernehmen</button>
+          </div>
+        </aside>
+
+        <section class="editor">
+          <div class="editor-header">
+            <h2>Save-Daten</h2>
+            <button id="expandButton" type="button" disabled>Alle öffnen</button>
+          </div>
+          <div id="emptyState" class="empty-state">
+            <h2>Save-Datei laden</h2>
+            <p>
+              Öffne eine `.dat`- oder JSON-Datei aus deinem DRG Survivor Save-Ordner.
+              Erstelle vorher eine Kopie der Originaldatei.
+            </p>
+            <code>%USERPROFILE%\AppData\LocalLow\Funday Games\DRG Survivor</code>
+          </div>
+          <div id="tree" class="tree" hidden></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
