@@ -2,3 +2,6 @@
 Thumbs.db
 *.log
 gear-mapping.raw.json
+Cpp2IL.exe
+Il2CppDumper/
+analysis/
