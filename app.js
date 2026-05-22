@@ -84,7 +84,6 @@ const traitLabels = {
 const traitFieldLabels = {
   RQ: "Rare quirk",
   LQ: "Legendary quirk",
-  F: "Flag",
 };
 const signLabels = {
   "-1": "Negative",
@@ -278,6 +277,7 @@ function renderItems() {
         <th>Stats</th>
         <th>Quirks</th>
         <th>New</th>
+        <th>Favorite</th>
         <th>Test</th>
       </tr>
     </thead>
@@ -307,6 +307,7 @@ function renderItems() {
       <td>${renderStatEditors(item, index)}</td>
       <td>${renderTraitEditors(item, index)}</td>
       <td><input type="checkbox" data-item-index="${index}" data-field="N" ${item.N ? "checked" : ""} /></td>
+      <td><input type="checkbox" data-item-index="${index}" data-field="F" ${Number(item.F) ? "checked" : ""} /></td>
       <td class="test-actions">
         <button type="button" data-item-index="${index}" data-action="test-rare-quirks">Rare</button>
         <button type="button" data-item-index="${index}" data-action="test-legendary-quirks">Legendary</button>
@@ -377,7 +378,7 @@ function renderStatEditors(item, index) {
 }
 
 function renderTraitEditors(item, index) {
-  return ["RQ", "LQ", "F"]
+  return ["RQ", "LQ"]
     .map(
       (field) => `
         <label class="trait-editor">
@@ -444,10 +445,16 @@ function handleItemFieldChange(event) {
   if (arrayField) {
     updateItemArrayField(item, arrayField, Number(event.target.dataset.slot), event.target.value);
   } else if (field) {
-    item[field] = event.target.type === "checkbox" ? event.target.checked : parseInputNumber(event.target.value);
+    item[field] = parseItemFieldValue(field, event.target);
   }
   markChanged();
   renderItems();
+}
+
+function parseItemFieldValue(field, target) {
+  if (field === "N") return target.checked;
+  if (field === "F") return target.checked ? 1 : 0;
+  return parseInputNumber(target.value);
 }
 
 function handleItemActionClick(event) {
