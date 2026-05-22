@@ -109,6 +109,7 @@ resourceGrid.addEventListener("change", handleNumberFieldChange);
 classGrid.addEventListener("change", handleClassFieldChange);
 metaGrid.addEventListener("change", handleMetaFieldChange);
 itemTable.addEventListener("change", handleItemFieldChange);
+itemTable.addEventListener("click", handleItemActionClick);
 
 quickButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -277,6 +278,7 @@ function renderItems() {
         <th>Stats</th>
         <th>Quirks</th>
         <th>New</th>
+        <th>Test</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -305,6 +307,7 @@ function renderItems() {
       <td>${renderStatEditors(item, index)}</td>
       <td>${renderTraitEditors(item, index)}</td>
       <td><input type="checkbox" data-item-index="${index}" data-field="N" ${item.N ? "checked" : ""} /></td>
+      <td><button type="button" data-item-index="${index}" data-action="test-quirks">Create copies</button></td>
     `;
     body.append(row);
   });
@@ -442,6 +445,49 @@ function handleItemFieldChange(event) {
   }
   markChanged();
   renderItems();
+}
+
+function handleItemActionClick(event) {
+  const action = event.target.dataset.action;
+  if (action !== "test-quirks") return;
+  const index = Number(event.target.dataset.itemIndex);
+  if (!Number.isInteger(index) || !Array.isArray(saveData.GearSaveData)) return;
+  createQuirkTestCopies(saveData.GearSaveData[index]);
+  markChanged();
+}
+
+function createQuirkTestCopies(item) {
+  const existingHcs = new Set(saveData.GearSaveData.map((gear) => Number(gear.HC)));
+  const base = Math.abs(Number(item.HC) || hashString(item.ID));
+
+  for (let index = 0; index <= 10; index += 1) {
+    const copy = cloneJson(item);
+    copy.HC = makeUniqueHc(base + 1000 + index, existingHcs);
+    copy.R = 4;
+    copy.L = 90 + index;
+    copy.U = Math.max(Number(copy.U) || 0, 3);
+    copy.N = true;
+    copy.RQ = index;
+    copy.LQ = index;
+    copy.F = 0;
+    saveData.GearSaveData.push(copy);
+  }
+
+  statusText.textContent = "Quirk-Testkopien erstellt";
+}
+
+function cloneJson(value) {
+  if (typeof structuredClone === "function") return structuredClone(value);
+  return JSON.parse(JSON.stringify(value));
+}
+
+function makeUniqueHc(seed, existingHcs) {
+  let value = seed | 0;
+  while (value === 0 || existingHcs.has(value)) {
+    value = (value + 7919) | 0;
+  }
+  existingHcs.add(value);
+  return value;
 }
 
 function updateItemArrayField(item, arrayField, slot, rawValue) {
@@ -648,6 +694,14 @@ function shortId(value) {
 function getGearName(item) {
   const name = gearData.names?.[item.ID];
   return name ? `${name} (${shortId(item.ID)})` : shortId(item.ID);
+}
+
+function hashString(value) {
+  let hash = 0;
+  for (const char of String(value)) {
+    hash = (hash * 31 + char.charCodeAt(0)) | 0;
+  }
+  return hash || 1;
 }
 
 function countLeaves(value) {
