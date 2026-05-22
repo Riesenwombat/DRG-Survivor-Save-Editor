@@ -19,12 +19,3 @@ Typical save folder on Windows:
 ```text
 %USERPROFILE%\AppData\LocalLow\Funday Games\DRG Survivor
 ```
-
-## GitHub Pages
-
-This is a static HTML/CSS/JavaScript site and can be hosted directly with
-GitHub Pages. In the repository settings, configure GitHub Pages with:
-
-- Source: `Deploy from a branch`
-- Branch: `main`
-- Folder: `/ (root)`
