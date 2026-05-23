@@ -363,7 +363,10 @@ function renderItemCreator() {
   itemCreator.innerHTML = `
     <div class="creator-header">
       <h4>Create item</h4>
-      <button type="button" data-creator-action="add">Add item</button>
+      <div class="creator-actions">
+        <button type="button" data-creator-action="add">Add item</button>
+        <button type="button" data-creator-action="give-all">Give all filtered</button>
+      </div>
     </div>
     <div class="creator-grid">
       <label>
@@ -672,8 +675,12 @@ function handleItemCreatorChange(event) {
 }
 
 function handleItemCreatorClick(event) {
-  if (event.target.dataset.creatorAction !== "add") return;
-  createItemFromCreator();
+  const action = event.target.dataset.creatorAction;
+  if (action === "add") {
+    createItemFromCreator();
+  } else if (action === "give-all") {
+    createAllItemsFromCreator();
+  }
 }
 
 function resetCreatorQuirks() {
@@ -700,27 +707,67 @@ function createItemFromCreator() {
   if (!Array.isArray(saveData.GearSaveData)) saveData.GearSaveData = [];
 
   const existingHcs = new Set(saveData.GearSaveData.map((gear) => Number(gear.HC)));
-  const stats = itemCreatorState.stats.filter((value) => value !== "" && Number.isFinite(Number(value))).map(Number);
-  const item = {
-    HC: makeUniqueHc(hashString(`${itemCreatorState.id}:${Date.now()}:${saveData.GearSaveData.length}`), existingHcs),
-    ID: itemCreatorState.id,
-    R: Number(itemCreatorState.rarity) || 0,
-    L: Math.max(0, Number(itemCreatorState.level) || 0),
-    U: Math.max(0, Number(itemCreatorState.upgrades) || 0),
-    N: Boolean(itemCreatorState.isNew),
-    S: stats,
-    SG: stats.map(() => 1),
-    ST: stats.map((_, index) => index),
-    RQ: Number(itemCreatorState.rareQuirk),
-    LQ: Number(itemCreatorState.legendaryQuirk),
-    F: itemCreatorState.favorite ? 1 : 0,
-  };
+  const item = createGearItem({
+    id: itemCreatorState.id,
+    existingHcs,
+    stats: itemCreatorState.stats,
+    rareQuirk: itemCreatorState.rareQuirk,
+    legendaryQuirk: itemCreatorState.legendaryQuirk,
+  });
 
   saveData.GearSaveData.push(item);
   itemScopeFilter.value = "all";
   itemRarityFilter.value = "all";
   markChanged();
   statusText.textContent = `${gearData.names?.[item.ID] ?? "Item"} erstellt`;
+}
+
+function createAllItemsFromCreator() {
+  if (!saveData) return;
+  if (!Array.isArray(saveData.GearSaveData)) saveData.GearSaveData = [];
+
+  const gearOptions = getFilteredGearOptions(getGearOptions());
+  const existingHcs = new Set(saveData.GearSaveData.map((gear) => Number(gear.HC)));
+  const created = gearOptions.map((gear) =>
+    createGearItem({
+      id: gear.id,
+      existingHcs,
+      stats: getDefaultStatsForGear(gear.id, itemCreatorState.rarity),
+      rareQuirk: getFirstQuirkIndex(gear.id, "RQ"),
+      legendaryQuirk: getFirstQuirkIndex(gear.id, "LQ"),
+    }),
+  );
+
+  saveData.GearSaveData.push(...created);
+  itemScopeFilter.value = "all";
+  itemRarityFilter.value = "all";
+  markChanged();
+  statusText.textContent = `${created.length} Items erstellt`;
+}
+
+function createGearItem({ id, existingHcs, stats, rareQuirk, legendaryQuirk }) {
+  const normalizedStats = stats.filter((value) => value !== "" && Number.isFinite(Number(value))).map(Number);
+  return {
+    HC: makeUniqueHc(hashString(`${id}:${Date.now()}:${existingHcs.size}`), existingHcs),
+    ID: id,
+    R: Number(itemCreatorState.rarity) || 0,
+    L: Math.max(0, Number(itemCreatorState.level) || 0),
+    U: Math.max(0, Number(itemCreatorState.upgrades) || 0),
+    N: Boolean(itemCreatorState.isNew),
+    S: normalizedStats,
+    SG: normalizedStats.map(() => 1),
+    ST: normalizedStats.map((_, index) => index),
+    RQ: Number(rareQuirk),
+    LQ: Number(legendaryQuirk),
+    F: itemCreatorState.favorite ? 1 : 0,
+  };
+}
+
+function getDefaultStatsForGear(id, rarity) {
+  const statGroups = getCreatorStatGroups(id, rarity);
+  return ["primary", "secondary", "tertiary"]
+    .map((group) => statGroups[group]?.[0]?.stat ?? "")
+    .filter((value) => value !== "");
 }
 
 function makeUniqueHc(seed, existingHcs) {
