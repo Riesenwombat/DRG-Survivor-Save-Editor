@@ -19,3 +19,6 @@ Typical save folder on Windows:
 ```text
 %USERPROFILE%\AppData\LocalLow\Funday Games\DRG Survivor
 ```
+
+## Open here:
+https://riesenwombat.github.io/DRG-Survivor-Save-Editor/
