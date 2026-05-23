@@ -397,11 +397,24 @@ function renderTraitEditors(item, index) {
 
 function renderQuirkOptions(item, field) {
   const observed = gearData.observedQuirks?.[item.ID]?.[field] ?? {};
-  return Object.entries(traitLabels)
-    .map(([value, label]) => {
-      const observedLabel = observed[value] ? `${label}: ${observed[value]}` : label;
-      return `<option value="${value}" ${Number(value) === item[field] ? "selected" : ""}>${escapeHtml(observedLabel)}</option>`;
-    })
+  const currentValue = Number(item[field]);
+  const options = Object.keys(observed).length
+    ? Object.entries(observed).map(([value, label]) => [Number(value), label])
+    : Object.entries(traitLabels).map(([value, label]) => [Number(value), label]);
+
+  if (!options.some(([value]) => value === -1)) {
+    options.unshift([-1, "None"]);
+  }
+  if (!options.some(([value]) => value === currentValue)) {
+    options.push([currentValue, `Current index ${currentValue}`]);
+  }
+
+  return options
+    .sort(([a], [b]) => a - b)
+    .map(
+      ([value, label]) =>
+        `<option value="${value}" ${value === currentValue ? "selected" : ""}>${escapeHtml(label)}</option>`,
+    )
     .join("");
 }
 
