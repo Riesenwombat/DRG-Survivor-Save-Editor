@@ -33,6 +33,7 @@ let selected = null;
 let allExpanded = false;
 const itemCreatorState = {
   id: "",
+  slot: "all",
   rarity: 4,
   level: 100,
   upgrades: 3,
@@ -50,6 +51,14 @@ const rarityLabels = {
   2: "Rare",
   3: "Epic",
   4: "Legendary",
+};
+const gearSlotLabels = {
+  0: "Tool",
+  1: "Armor",
+  2: "Grinder",
+  3: "Weapon Mod",
+  4: "Tank",
+  5: "Companion",
 };
 const statLabels = {
   0: "Max HP",
@@ -333,13 +342,14 @@ function renderItems() {
 
 function renderItemCreator() {
   const gearOptions = getGearOptions();
-  if (!gearOptions.length) {
+  const filteredGearOptions = getFilteredGearOptions(gearOptions);
+  if (!filteredGearOptions.length) {
     itemCreator.innerHTML = `<p class="muted">No extracted gear definitions available.</p>`;
     return;
   }
 
-  if (!itemCreatorState.id || !gearOptions.some((gear) => gear.id === itemCreatorState.id)) {
-    itemCreatorState.id = gearOptions[0].id;
+  if (!itemCreatorState.id || !filteredGearOptions.some((gear) => gear.id === itemCreatorState.id)) {
+    itemCreatorState.id = filteredGearOptions[0].id;
     resetCreatorQuirks();
     resetCreatorStats();
   }
@@ -357,12 +367,24 @@ function renderItemCreator() {
     </div>
     <div class="creator-grid">
       <label>
+        <span>Slot filter</span>
+        <select data-creator-field="slot">
+          <option value="all" ${itemCreatorState.slot === "all" ? "selected" : ""}>All slots</option>
+          ${Object.entries(gearSlotLabels)
+            .map(
+              ([value, label]) =>
+                `<option value="${value}" ${String(value) === String(itemCreatorState.slot) ? "selected" : ""}>${label}</option>`,
+            )
+            .join("")}
+        </select>
+      </label>
+      <label>
         <span>Item type</span>
         <select data-creator-field="id">
-          ${gearOptions
+          ${filteredGearOptions
             .map(
               (gear) =>
-                `<option value="${escapeHtml(gear.id)}" ${gear.id === itemCreatorState.id ? "selected" : ""}>${escapeHtml(gear.name)}</option>`,
+                `<option value="${escapeHtml(gear.id)}" ${gear.id === itemCreatorState.id ? "selected" : ""}>${escapeHtml(gearSlotLabels[gear.slot] ?? "Slot")} - ${escapeHtml(gear.name)}</option>`,
             )
             .join("")}
         </select>
@@ -412,9 +434,15 @@ function renderItemCreator() {
 }
 
 function getGearOptions() {
-  return Object.entries(gearData.names ?? {})
-    .map(([id, name]) => ({ id, name }))
+  return (gearData.gears ?? [])
+    .map((gear) => ({ id: gear.guid, name: gear.refName || gear.name, slot: gear.slot }))
+    .filter((gear) => gear.id && gear.name)
     .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function getFilteredGearOptions(gearOptions) {
+  if (itemCreatorState.slot === "all") return gearOptions;
+  return gearOptions.filter((gear) => String(gear.slot) === String(itemCreatorState.slot));
 }
 
 function renderCreatorStatSelectors() {
@@ -618,6 +646,12 @@ function handleItemCreatorChange(event) {
 
   if (field === "id") {
     itemCreatorState.id = event.target.value;
+    resetCreatorQuirks();
+    resetCreatorStats();
+  } else if (field === "slot") {
+    itemCreatorState.slot = event.target.value;
+    const [first] = getFilteredGearOptions(getGearOptions());
+    if (first) itemCreatorState.id = first.id;
     resetCreatorQuirks();
     resetCreatorStats();
   } else if (field === "rarity") {
