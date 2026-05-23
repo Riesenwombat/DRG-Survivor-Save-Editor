@@ -17,6 +17,7 @@ const resourceGrid = document.querySelector("#resourceGrid");
 const classGrid = document.querySelector("#classGrid");
 const metaGrid = document.querySelector("#metaGrid");
 const itemSummary = document.querySelector("#itemSummary");
+const itemCreator = document.querySelector("#itemCreator");
 const itemTable = document.querySelector("#itemTable");
 const maxResourcesButton = document.querySelector("#maxResourcesButton");
 const maxMetaButton = document.querySelector("#maxMetaButton");
@@ -30,6 +31,17 @@ let saveData = null;
 let originalName = "drg-survivor-save.dat";
 let selected = null;
 let allExpanded = false;
+const itemCreatorState = {
+  id: "",
+  rarity: 4,
+  level: 100,
+  upgrades: 3,
+  stats: [],
+  rareQuirk: 0,
+  legendaryQuirk: 0,
+  isNew: true,
+  favorite: false,
+};
 
 const resourceFields = ["Credits", "Bismor", "Croppa", "EnorPearl", "Jadiz", "Magnite", "Umanite", "PowerCore"];
 const rarityLabels = {
@@ -111,7 +123,8 @@ resourceGrid.addEventListener("change", handleNumberFieldChange);
 classGrid.addEventListener("change", handleClassFieldChange);
 metaGrid.addEventListener("change", handleMetaFieldChange);
 itemTable.addEventListener("change", handleItemFieldChange);
-itemTable.addEventListener("click", handleItemActionClick);
+itemCreator.addEventListener("change", handleItemCreatorChange);
+itemCreator.addEventListener("click", handleItemCreatorClick);
 
 quickButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -239,6 +252,7 @@ function renderMetaUpgrades() {
 
 function renderItems() {
   itemTable.innerHTML = "";
+  renderItemCreator();
   const items = Array.isArray(saveData.GearSaveData) ? saveData.GearSaveData : [];
   const equippedMap = getEquippedGearMap();
   const scope = itemScopeFilter.value;
@@ -281,7 +295,6 @@ function renderItems() {
         <th>Quirks</th>
         <th>New</th>
         <th>Favorite</th>
-        <th>Test</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -311,15 +324,141 @@ function renderItems() {
       <td>${renderTraitEditors(item, index)}</td>
       <td><input type="checkbox" data-item-index="${index}" data-field="N" ${item.N ? "checked" : ""} /></td>
       <td><input type="checkbox" data-item-index="${index}" data-field="F" ${Number(item.F) ? "checked" : ""} /></td>
-      <td class="test-actions">
-        <button type="button" data-item-index="${index}" data-action="test-rare-quirks">Rare</button>
-        <button type="button" data-item-index="${index}" data-action="test-legendary-quirks">Legendary</button>
-      </td>
     `;
     body.append(row);
   });
 
   itemTable.append(table);
+}
+
+function renderItemCreator() {
+  const gearOptions = getGearOptions();
+  if (!gearOptions.length) {
+    itemCreator.innerHTML = `<p class="muted">No extracted gear definitions available.</p>`;
+    return;
+  }
+
+  if (!itemCreatorState.id || !gearOptions.some((gear) => gear.id === itemCreatorState.id)) {
+    itemCreatorState.id = gearOptions[0].id;
+    resetCreatorQuirks();
+    resetCreatorStats();
+  }
+
+  const pseudoItem = {
+    ID: itemCreatorState.id,
+    RQ: itemCreatorState.rareQuirk,
+    LQ: itemCreatorState.legendaryQuirk,
+  };
+
+  itemCreator.innerHTML = `
+    <div class="creator-header">
+      <h4>Create item</h4>
+      <button type="button" data-creator-action="add">Add item</button>
+    </div>
+    <div class="creator-grid">
+      <label>
+        <span>Item type</span>
+        <select data-creator-field="id">
+          ${gearOptions
+            .map(
+              (gear) =>
+                `<option value="${escapeHtml(gear.id)}" ${gear.id === itemCreatorState.id ? "selected" : ""}>${escapeHtml(gear.name)}</option>`,
+            )
+            .join("")}
+        </select>
+      </label>
+      <label>
+        <span>Rarity</span>
+        <select data-creator-field="rarity">
+          ${Object.entries(rarityLabels)
+            .map(
+              ([value, label]) =>
+                `<option value="${value}" ${Number(value) === Number(itemCreatorState.rarity) ? "selected" : ""}>${label}</option>`,
+            )
+            .join("")}
+        </select>
+      </label>
+      <label>
+        <span>Level</span>
+        <input type="number" min="0" data-creator-field="level" value="${Number(itemCreatorState.level) || 0}" />
+      </label>
+      <label>
+        <span>Upgrades</span>
+        <input type="number" min="0" data-creator-field="upgrades" value="${Number(itemCreatorState.upgrades) || 0}" />
+      </label>
+      <label>
+        <span>Rare quirk</span>
+        <select data-creator-field="rareQuirk">
+          ${renderQuirkOptions(pseudoItem, "RQ")}
+        </select>
+      </label>
+      <label>
+        <span>Legendary quirk</span>
+        <select data-creator-field="legendaryQuirk">
+          ${renderQuirkOptions(pseudoItem, "LQ")}
+        </select>
+      </label>
+      ${renderCreatorStatSelectors()}
+      <label class="checkbox-field">
+        <input type="checkbox" data-creator-field="isNew" ${itemCreatorState.isNew ? "checked" : ""} />
+        <span>Mark as new</span>
+      </label>
+      <label class="checkbox-field">
+        <input type="checkbox" data-creator-field="favorite" ${itemCreatorState.favorite ? "checked" : ""} />
+        <span>Favorite</span>
+      </label>
+    </div>
+  `;
+}
+
+function getGearOptions() {
+  return Object.entries(gearData.names ?? {})
+    .map(([id, name]) => ({ id, name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function renderCreatorStatSelectors() {
+  const statGroups = getCreatorStatGroups(itemCreatorState.id, itemCreatorState.rarity);
+  ensureCreatorStats(statGroups);
+  return ["primary", "secondary", "tertiary"]
+    .map((group, index) => {
+      const options = statGroups[group] ?? [];
+      return `
+        <label>
+          <span>${group[0].toUpperCase()}${group.slice(1)} stat</span>
+          <select data-creator-field="stat" data-stat-slot="${index}">
+            <option value="">Empty</option>
+            ${options
+              .map(
+                (option) =>
+                  `<option value="${option.stat}" ${Number(option.stat) === Number(itemCreatorState.stats[index]) ? "selected" : ""}>${escapeHtml(option.statName)}</option>`,
+              )
+              .join("")}
+          </select>
+        </label>
+      `;
+    })
+    .join("");
+}
+
+function getCreatorStatGroups(id, rarity) {
+  const definition = getGearDefinition(id);
+  return definition?.statOptions?.[String(rarity)] ?? { primary: [], secondary: [], tertiary: [] };
+}
+
+function ensureCreatorStats(statGroups) {
+  if (!Array.isArray(itemCreatorState.stats)) itemCreatorState.stats = [];
+  ["primary", "secondary", "tertiary"].forEach((group, index) => {
+    const options = statGroups[group] ?? [];
+    if (!options.length) {
+      itemCreatorState.stats[index] = "";
+      return;
+    }
+    const current = Number(itemCreatorState.stats[index]);
+    if (!options.some((option) => Number(option.stat) === current)) {
+      itemCreatorState.stats[index] = options[0].stat;
+    }
+  });
 }
 
 function getEquippedGearMap() {
@@ -405,7 +544,7 @@ function renderQuirkOptions(item, field) {
   if (!options.some(([value]) => value === -1)) {
     options.unshift([-1, "None"]);
   }
-  if (!options.some(([value]) => value === currentValue)) {
+  if (Number.isFinite(currentValue) && !options.some(([value]) => value === currentValue)) {
     options.push([currentValue, `Current index ${currentValue}`]);
   }
 
@@ -473,38 +612,81 @@ function parseItemFieldValue(field, target) {
   return parseInputNumber(target.value);
 }
 
-function handleItemActionClick(event) {
-  const action = event.target.dataset.action;
-  if (action !== "test-rare-quirks" && action !== "test-legendary-quirks") return;
-  const index = Number(event.target.dataset.itemIndex);
-  if (!Number.isInteger(index) || !Array.isArray(saveData.GearSaveData)) return;
-  createQuirkTestCopies(saveData.GearSaveData[index], action === "test-rare-quirks" ? "RQ" : "LQ");
-  markChanged();
-}
+function handleItemCreatorChange(event) {
+  const field = event.target.dataset.creatorField;
+  if (!field) return;
 
-function createQuirkTestCopies(item, field) {
-  const existingHcs = new Set(saveData.GearSaveData.map((gear) => Number(gear.HC)));
-  const base = Math.abs(Number(item.HC) || hashString(item.ID));
-
-  for (let index = 0; index <= 10; index += 1) {
-    const copy = cloneJson(item);
-    copy.HC = makeUniqueHc(base + 1000 + index, existingHcs);
-    copy.R = 4;
-    copy.L = 90 + index;
-    copy.U = Math.max(Number(copy.U) || 0, 3);
-    copy.N = true;
-    copy.RQ = field === "RQ" ? index : Number(item.RQ) || 0;
-    copy.LQ = field === "LQ" ? index : Number(item.LQ) || 0;
-    copy.F = 0;
-    saveData.GearSaveData.push(copy);
+  if (field === "id") {
+    itemCreatorState.id = event.target.value;
+    resetCreatorQuirks();
+    resetCreatorStats();
+  } else if (field === "rarity") {
+    itemCreatorState.rarity = parseInputNumber(event.target.value);
+    resetCreatorStats();
+  } else if (field === "level" || field === "upgrades") {
+    itemCreatorState[field] = parseInputNumber(event.target.value);
+  } else if (field === "rareQuirk" || field === "legendaryQuirk") {
+    itemCreatorState[field] = parseInputNumber(event.target.value);
+  } else if (field === "stat") {
+    const slot = Number(event.target.dataset.statSlot);
+    if (Number.isInteger(slot)) itemCreatorState.stats[slot] = event.target.value === "" ? "" : parseInputNumber(event.target.value);
+  } else if (field === "isNew" || field === "favorite") {
+    itemCreatorState[field] = event.target.checked;
   }
 
-  statusText.textContent = `${field}-Testkopien erstellt`;
+  renderItemCreator();
 }
 
-function cloneJson(value) {
-  if (typeof structuredClone === "function") return structuredClone(value);
-  return JSON.parse(JSON.stringify(value));
+function handleItemCreatorClick(event) {
+  if (event.target.dataset.creatorAction !== "add") return;
+  createItemFromCreator();
+}
+
+function resetCreatorQuirks() {
+  itemCreatorState.rareQuirk = getFirstQuirkIndex(itemCreatorState.id, "RQ");
+  itemCreatorState.legendaryQuirk = getFirstQuirkIndex(itemCreatorState.id, "LQ");
+}
+
+function resetCreatorStats() {
+  itemCreatorState.stats = [];
+  ensureCreatorStats(getCreatorStatGroups(itemCreatorState.id, itemCreatorState.rarity));
+}
+
+function getFirstQuirkIndex(id, field) {
+  const observed = gearData.observedQuirks?.[id]?.[field] ?? {};
+  const first = Object.keys(observed)
+    .map(Number)
+    .filter(Number.isFinite)
+    .sort((a, b) => a - b)[0];
+  return Number.isFinite(first) ? first : -1;
+}
+
+function createItemFromCreator() {
+  if (!saveData) return;
+  if (!Array.isArray(saveData.GearSaveData)) saveData.GearSaveData = [];
+
+  const existingHcs = new Set(saveData.GearSaveData.map((gear) => Number(gear.HC)));
+  const stats = itemCreatorState.stats.filter((value) => value !== "" && Number.isFinite(Number(value))).map(Number);
+  const item = {
+    HC: makeUniqueHc(hashString(`${itemCreatorState.id}:${Date.now()}:${saveData.GearSaveData.length}`), existingHcs),
+    ID: itemCreatorState.id,
+    R: Number(itemCreatorState.rarity) || 0,
+    L: Math.max(0, Number(itemCreatorState.level) || 0),
+    U: Math.max(0, Number(itemCreatorState.upgrades) || 0),
+    N: Boolean(itemCreatorState.isNew),
+    S: stats,
+    SG: stats.map(() => 1),
+    ST: stats.map((_, index) => index),
+    RQ: Number(itemCreatorState.rareQuirk),
+    LQ: Number(itemCreatorState.legendaryQuirk),
+    F: itemCreatorState.favorite ? 1 : 0,
+  };
+
+  saveData.GearSaveData.push(item);
+  itemScopeFilter.value = "all";
+  itemRarityFilter.value = "all";
+  markChanged();
+  statusText.textContent = `${gearData.names?.[item.ID] ?? "Item"} erstellt`;
 }
 
 function makeUniqueHc(seed, existingHcs) {
@@ -720,6 +902,10 @@ function shortId(value) {
 function getGearName(item) {
   const name = gearData.names?.[item.ID];
   return name ? `${name} (${shortId(item.ID)})` : shortId(item.ID);
+}
+
+function getGearDefinition(id) {
+  return (gearData.gears ?? []).find((gear) => gear.guid === id);
 }
 
 function hashString(value) {

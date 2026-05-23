@@ -352,6 +352,62 @@ textarea {
   min-width: 0;
 }
 
+.item-creator {
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(17, 19, 18, 0.78);
+}
+
+.creator-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.creator-header h4 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.creator-header button {
+  background: var(--accent-2);
+  color: #071510;
+  font-weight: 800;
+}
+
+.creator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.creator-grid label {
+  display: grid;
+  gap: 5px;
+}
+
+.creator-grid label > span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.checkbox-field {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  align-content: center;
+}
+
+.checkbox-field input[type="checkbox"] {
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+}
+
 .item-table {
   max-height: 420px;
   overflow: auto;
@@ -361,7 +417,7 @@ textarea {
 
 .item-table table {
   width: 100%;
-  min-width: 1160px;
+  min-width: 1040px;
   border-collapse: collapse;
   font-size: 0.86rem;
 }
@@ -410,16 +466,6 @@ textarea {
 .trait-editor span {
   color: var(--muted);
   font-size: 0.78rem;
-}
-
-.test-actions {
-  display: flex;
-  gap: 6px;
-}
-
-.test-actions button {
-  min-height: 34px;
-  padding: 0 10px;
 }
 
 .tree {

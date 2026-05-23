@@ -258,6 +258,33 @@ def summarize_quirk(ref, objects):
     return quirk
 
 
+def summarize_stat_pool(pool):
+    result = {}
+    for tier_name in ("Primary", "Secondary", "Tertiary"):
+        tier = pool.get(tier_name, {}) if isinstance(pool, dict) else {}
+        result[tier_name.lower()] = [
+            {
+                "stat": mod_type.get("Type"),
+                "statName": STAT_LABELS.get(mod_type.get("Type"), f"Stat {mod_type.get('Type')}"),
+                "isFlat": bool(mod_type.get("IsFlat")),
+            }
+            for mod_type in tier.get("ModTypes", [])
+            if isinstance(mod_type, dict)
+        ]
+    return result
+
+
+def summarize_stat_options(tree):
+    fields = {
+        "0": "CommonStat",
+        "1": "UncommonStat",
+        "2": "RareStat",
+        "3": "EpicStat",
+        "4": "LegendaryStat",
+    }
+    return {rarity: summarize_stat_pool(tree.get(field, {})) for rarity, field in fields.items()}
+
+
 def summarize_gear(obj, tree, objects):
     return {
         "path_id": obj.path_id,
@@ -269,6 +296,7 @@ def summarize_gear(obj, tree, objects):
         "legendary_quirks": [compact_ref(ref) for ref in tree.get("LegendaryQuirks", [])],
         "rareQuirks": [summarize_quirk(ref, objects) for ref in tree.get("RareQuirks", [])],
         "legendaryQuirks": [summarize_quirk(ref, objects) for ref in tree.get("LegendaryQuirks", [])],
+        "statOptions": summarize_stat_options(tree),
     }
 
 

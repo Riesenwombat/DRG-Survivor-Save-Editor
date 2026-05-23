@@ -665,7 +665,210 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Drop pod exit: +2000% Life regen, 90s"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -8695885549147159732,
@@ -848,7 +1051,142 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "QuirkAccessTags_Fire"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -8320454196168695673,
@@ -1004,7 +1342,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Loot bug death: +15% Reload speed, 15s"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -8211747385784782024,
@@ -1089,7 +1600,142 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+5%"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -6949904294236702260,
@@ -1201,7 +1847,142 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Loot bug death: +7.5% Damage, 15s"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -6879401925374748895,
@@ -1421,7 +2202,220 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+15"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -6849981032721822877,
@@ -1644,7 +2638,160 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Drop pod exit: +30% Move speed, 30s"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -6552224095660545116,
@@ -1797,7 +2944,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+2"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -6253781209027131553,
@@ -1887,7 +3207,176 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "LegendaryQuirk_AccessTags_Projectile"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -6122399848754499527,
@@ -2047,7 +3536,176 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Elite spawned: +5 Max HP"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -5347756923351911255,
@@ -2201,7 +3859,200 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Loot bug death: +1% Piercing"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -5170173383119176752,
@@ -2366,7 +4217,200 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Loot bug death: +15% Damage, 15s"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -5043287585579197788,
@@ -2526,7 +4570,200 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+4 Luck"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -4168232173426890020,
@@ -2605,7 +4842,142 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "QuirkBoscoMiningAura"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -2737368758209899437,
@@ -2773,7 +5145,140 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Boss spawned: +100% Damage, 10s"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -2653645171223087004,
@@ -2879,7 +5384,147 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Loot bug death: +0.8% Piercing"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": -1160270016725538493,
@@ -3024,7 +5669,220 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "LegendaryQuirk_AccessTags_Drones"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 61041631007732517,
@@ -3217,7 +6075,186 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+10%"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 2,
+              "statName": "Dodge",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 2,
+              "statName": "Dodge",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 349865551029294234,
@@ -3367,7 +6404,200 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+1"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 890617421611951889,
@@ -3452,7 +6682,122 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+5%"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 1499490761001280246,
@@ -3613,7 +6958,160 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+0.1 Max HP"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 1807537019874638460,
@@ -3773,7 +7271,160 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+0.1 Armor"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 2,
+              "statName": "Dodge",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 2,
+              "statName": "Dodge",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 2283844916866221937,
@@ -3933,7 +7584,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Secondary mission complete: +5% Potency"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 2397779940921257563,
@@ -4084,7 +7908,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "LegendaryQuirk_AccessTags_Beams"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 2699211111537288457,
@@ -4244,7 +8241,156 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Huuli Hoarder death: +50 Max HP"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 3163503062377422647,
@@ -4400,7 +8546,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "Boss spawned: +100% Weapon range, 15s"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 3499766623966081985,
@@ -4526,7 +8845,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+10%"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 3,
+              "statName": "Move speed",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 19,
+              "statName": "Explosion radius",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 4049707232503571947,
@@ -4679,7 +9171,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+25%"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 15,
+              "statName": "Lifetime",
+              "isFlat": false
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 4071829286147636633,
@@ -4758,7 +9423,142 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "QuirkBoscoRemotePickup"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 4207468429601882894,
@@ -4884,7 +9684,160 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "-2"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 2,
+              "statName": "Dodge",
+              "isFlat": true
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            },
+            {
+              "stat": 2,
+              "statName": "Dodge",
+              "isFlat": true
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 4370575744811234583,
@@ -5064,7 +10017,140 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+2.5% Fire rate"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 11,
+              "statName": "Damage",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 6462672681883865898,
@@ -5276,7 +10362,108 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+0.1 Armor"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        }
+      }
     },
     {
       "path_id": 7835350137063835418,
@@ -5423,7 +10610,180 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+25%"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 9,
+              "statName": "Pickup radius",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            },
+            {
+              "stat": 0,
+              "statName": "Max HP",
+              "isFlat": true
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 1,
+              "statName": "Armor",
+              "isFlat": true
+            },
+            {
+              "stat": 8,
+              "statName": "Life regen",
+              "isFlat": true
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     },
     {
       "path_id": 8612765378211743725,
@@ -5528,7 +10888,170 @@ window.DRG_GEAR_DATA = {
           ],
           "label": "+5%"
         }
-      ]
+      ],
+      "statOptions": {
+        "0": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [],
+          "tertiary": []
+        },
+        "1": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "2": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": []
+        },
+        "3": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 4,
+              "statName": "Fire rate",
+              "isFlat": false
+            }
+          ]
+        },
+        "4": {
+          "primary": [
+            {
+              "stat": 12,
+              "statName": "Mining speed",
+              "isFlat": false
+            }
+          ],
+          "secondary": [
+            {
+              "stat": 14,
+              "statName": "Reload speed",
+              "isFlat": false
+            },
+            {
+              "stat": 10,
+              "statName": "Status effect damage",
+              "isFlat": false
+            },
+            {
+              "stat": 17,
+              "statName": "Weapon range",
+              "isFlat": false
+            }
+          ],
+          "tertiary": [
+            {
+              "stat": 5,
+              "statName": "Critical chance",
+              "isFlat": true
+            },
+            {
+              "stat": 6,
+              "statName": "Critical damage",
+              "isFlat": true
+            },
+            {
+              "stat": 20,
+              "statName": "Luck",
+              "isFlat": true
+            },
+            {
+              "stat": 26,
+              "statName": "Potency",
+              "isFlat": false
+            },
+            {
+              "stat": 21,
+              "statName": "XP gain",
+              "isFlat": false
+            }
+          ]
+        }
+      }
     }
   ]
 };
