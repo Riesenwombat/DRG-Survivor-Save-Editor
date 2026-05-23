@@ -332,6 +332,28 @@ textarea {
   gap: 10px;
 }
 
+.mastery-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.mastery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.mastery-grid label {
+  display: grid;
+  gap: 5px;
+}
+
+.mastery-grid label > span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 .number-field {
   display: grid;
   gap: 5px;

@@ -16,6 +16,7 @@ const saveInfo = document.querySelector("#saveInfo");
 const resourceGrid = document.querySelector("#resourceGrid");
 const classGrid = document.querySelector("#classGrid");
 const metaGrid = document.querySelector("#metaGrid");
+const masteryEditor = document.querySelector("#masteryEditor");
 const itemSummary = document.querySelector("#itemSummary");
 const itemCreator = document.querySelector("#itemCreator");
 const itemTable = document.querySelector("#itemTable");
@@ -115,6 +116,11 @@ const signLabels = {
   1: "Positive",
 };
 const gearData = window.DRG_GEAR_DATA ?? { names: {}, observedQuirks: {}, discoveredQuirkNames: [] };
+const masteryData = window.DRG_MASTERY_DATA ?? { weapons: [], challengesByWeapon: {}, weaponMasteryChallenges: [] };
+const masteryEditorState = {
+  weaponGuid: "",
+  challengeGuid: "",
+};
 
 fileInput.addEventListener("change", handleFileSelect);
 downloadButton.addEventListener("click", downloadSave);
@@ -131,6 +137,8 @@ itemRarityFilter.addEventListener("change", renderDashboard);
 resourceGrid.addEventListener("change", handleNumberFieldChange);
 classGrid.addEventListener("change", handleClassFieldChange);
 metaGrid.addEventListener("change", handleMetaFieldChange);
+masteryEditor.addEventListener("change", handleMasteryEditorChange);
+masteryEditor.addEventListener("click", handleMasteryEditorClick);
 itemTable.addEventListener("change", handleItemFieldChange);
 itemCreator.addEventListener("change", handleItemCreatorChange);
 itemCreator.addEventListener("click", handleItemCreatorClick);
@@ -214,6 +222,7 @@ function renderDashboard() {
   renderSaveInfo();
   renderClasses();
   renderMetaUpgrades();
+  renderMasteryEditor();
   renderItems();
 }
 
@@ -257,6 +266,130 @@ function renderMetaUpgrades() {
   upgrades.forEach((entry, index) => {
     metaGrid.append(createNumberField(entry.Id, `meta:${index}:Level`, entry.Level ?? 0));
   });
+}
+
+function renderMasteryEditor() {
+  const weapons = masteryData.weapons ?? [];
+  if (!weapons.length) {
+    masteryEditor.innerHTML = `<p class="muted">No weapon mastery data found.</p>`;
+    return;
+  }
+
+  if (!masteryEditorState.weaponGuid || !weapons.some((weapon) => weapon.guid === masteryEditorState.weaponGuid)) {
+    masteryEditorState.weaponGuid = weapons[0].guid;
+  }
+
+  const challenges = getMasteryChallengesForWeapon(masteryEditorState.weaponGuid);
+  if (!masteryEditorState.challengeGuid || !challenges.some((challenge) => challenge.guid === masteryEditorState.challengeGuid)) {
+    masteryEditorState.challengeGuid = challenges[0]?.guid ?? "";
+  }
+
+  const weaponSave = getWeaponMasterySave(masteryEditorState.weaponGuid) ?? { Mastery: 0 };
+  const challengeSave = getChallengeSave(masteryEditorState.challengeGuid) ?? {
+    IsUnlocked: false,
+    Completion: 0,
+    CES: 0,
+    CEH: 0,
+  };
+  const challengeScore = getChallengeScoreSave(masteryEditorState.challengeGuid) ?? { Score: 0 };
+
+  masteryEditor.innerHTML = `
+    <div class="mastery-grid">
+      <label>
+        <span>Weapon</span>
+        <select data-mastery-field="weaponGuid">
+          ${weapons
+            .map(
+              (weapon) =>
+                `<option value="${escapeHtml(weapon.guid)}" ${weapon.guid === masteryEditorState.weaponGuid ? "selected" : ""}>${escapeHtml(weapon.name)}</option>`,
+            )
+            .join("")}
+        </select>
+      </label>
+      <label>
+        <span>Weapon mastery</span>
+        <input type="number" min="0" data-mastery-field="weaponMastery" value="${weaponSave.Mastery ?? 0}" />
+      </label>
+      <label>
+        <span>Challenge</span>
+        <select data-mastery-field="challengeGuid">
+          ${challenges
+            .map(
+              (challenge) =>
+                `<option value="${escapeHtml(challenge.guid)}" ${challenge.guid === masteryEditorState.challengeGuid ? "selected" : ""}>${escapeHtml(challenge.name)}</option>`,
+            )
+            .join("")}
+        </select>
+      </label>
+      <label>
+        <span>Completion</span>
+        <input type="number" min="0" data-mastery-field="challengeCompletion" value="${challengeSave.Completion ?? 0}" />
+      </label>
+      <label>
+        <span>Escort completion</span>
+        <input type="number" min="0" data-mastery-field="challengeEscort" value="${challengeSave.CES ?? 0}" />
+      </label>
+      <label>
+        <span>Egg Hunt completion</span>
+        <input type="number" min="0" data-mastery-field="challengeEggHunt" value="${challengeSave.CEH ?? 0}" />
+      </label>
+      <label>
+        <span>Best score</span>
+        <input type="number" min="0" data-mastery-field="challengeScore" value="${challengeScore.Score ?? 0}" />
+      </label>
+      <label class="checkbox-field">
+        <input type="checkbox" data-mastery-field="challengeUnlocked" ${challengeSave.IsUnlocked ? "checked" : ""} />
+        <span>Challenge unlocked</span>
+      </label>
+    </div>
+    <div class="inline-actions">
+      <button type="button" data-mastery-action="complete-selected">Complete selected</button>
+      <button type="button" data-mastery-action="unlock-all-weapon">Unlock weapon challenges</button>
+    </div>
+  `;
+}
+
+function getMasteryChallengesForWeapon(weaponGuid) {
+  return masteryData.challengesByWeapon?.[weaponGuid] ?? [];
+}
+
+function getWeaponMasterySave(weaponGuid, create = false) {
+  if (!Array.isArray(saveData.WeaponSaveData)) {
+    if (!create) return undefined;
+    saveData.WeaponSaveData = [];
+  }
+  let entry = saveData.WeaponSaveData.find((item) => item.Guid === weaponGuid);
+  if (!entry && create) {
+    entry = { Guid: weaponGuid, Mastery: 0 };
+    saveData.WeaponSaveData.push(entry);
+  }
+  return entry;
+}
+
+function getChallengeSave(challengeGuid, create = false) {
+  if (!Array.isArray(saveData.Challenges)) {
+    if (!create) return undefined;
+    saveData.Challenges = [];
+  }
+  let entry = saveData.Challenges.find((item) => item.Guid === challengeGuid);
+  if (!entry && create) {
+    entry = { Guid: challengeGuid, IsUnlocked: true, Completion: 0, CES: 0, CEH: 0 };
+    saveData.Challenges.push(entry);
+  }
+  return entry;
+}
+
+function getChallengeScoreSave(challengeGuid, create = false) {
+  if (!Array.isArray(saveData.ChallengeScore)) {
+    if (!create) return undefined;
+    saveData.ChallengeScore = [];
+  }
+  let entry = saveData.ChallengeScore.find((item) => item.GUID === challengeGuid);
+  if (!entry && create) {
+    entry = { GUID: challengeGuid, Score: 0 };
+    saveData.ChallengeScore.push(entry);
+  }
+  return entry;
 }
 
 function renderItems() {
@@ -619,6 +752,66 @@ function handleMetaFieldChange(event) {
   const [, index, field] = key.split(":");
   saveData.MetaStatUpgrades[Number(index)][field] = parseInputNumber(event.target.value);
   markChanged();
+}
+
+function handleMasteryEditorChange(event) {
+  const field = event.target.dataset.masteryField;
+  if (!field) return;
+
+  if (field === "weaponGuid") {
+    masteryEditorState.weaponGuid = event.target.value;
+    masteryEditorState.challengeGuid = getMasteryChallengesForWeapon(masteryEditorState.weaponGuid)[0]?.guid ?? "";
+    renderMasteryEditor();
+    return;
+  }
+
+  if (field === "challengeGuid") {
+    masteryEditorState.challengeGuid = event.target.value;
+    renderMasteryEditor();
+    return;
+  }
+
+  if (field === "weaponMastery") {
+    getWeaponMasterySave(masteryEditorState.weaponGuid, true).Mastery = parseInputNumber(event.target.value);
+  } else if (field === "challengeCompletion") {
+    getChallengeSave(masteryEditorState.challengeGuid, true).Completion = parseInputNumber(event.target.value);
+  } else if (field === "challengeEscort") {
+    getChallengeSave(masteryEditorState.challengeGuid, true).CES = parseInputNumber(event.target.value);
+  } else if (field === "challengeEggHunt") {
+    getChallengeSave(masteryEditorState.challengeGuid, true).CEH = parseInputNumber(event.target.value);
+  } else if (field === "challengeScore") {
+    getChallengeScoreSave(masteryEditorState.challengeGuid, true).Score = parseInputNumber(event.target.value);
+  } else if (field === "challengeUnlocked") {
+    getChallengeSave(masteryEditorState.challengeGuid, true).IsUnlocked = event.target.checked;
+  }
+
+  markChanged();
+}
+
+function handleMasteryEditorClick(event) {
+  const action = event.target.dataset.masteryAction;
+  if (action === "complete-selected") {
+    completeMasteryChallenge(masteryEditorState.challengeGuid);
+    markChanged();
+    statusText.textContent = "Mastery challenge completed";
+  } else if (action === "unlock-all-weapon") {
+    getMasteryChallengesForWeapon(masteryEditorState.weaponGuid).forEach((challenge) => {
+      getChallengeSave(challenge.guid, true).IsUnlocked = true;
+    });
+    markChanged();
+    statusText.textContent = "Weapon challenges unlocked";
+  }
+}
+
+function completeMasteryChallenge(challengeGuid) {
+  const challenge = getChallengeSave(challengeGuid, true);
+  if (!challenge) return;
+  challenge.IsUnlocked = true;
+  challenge.Completion = Math.max(Number(challenge.Completion) || 0, 5);
+  challenge.CES = Math.max(Number(challenge.CES) || 0, 5);
+  challenge.CEH = Math.max(Number(challenge.CEH) || 0, 5);
+  const score = getChallengeScoreSave(challengeGuid, true);
+  score.Score = Math.max(Number(score.Score) || 0, 100000);
 }
 
 function handleItemFieldChange(event) {
