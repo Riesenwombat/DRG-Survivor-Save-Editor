@@ -1702,5 +1702,448 @@ window.DRG_MASTERY_DATA = {
         ]
       }
     ]
+  },
+  "classMods": [
+    {
+      "path_id": 5062041725676041597,
+      "guid": "ce29ce82-bda9-4307-b877-d3f430ed5ec3",
+      "name": "Foreman",
+      "classType": 0
+    },
+    {
+      "path_id": 4816140838758266066,
+      "guid": "93c2b272-16fd-495d-918b-e18ede618edb",
+      "name": "Interrogator",
+      "classType": 0
+    },
+    {
+      "path_id": 1358114497726538730,
+      "guid": "fc6bcbc9-af3f-484c-a387-e10da805e70c",
+      "name": "Strong Armed",
+      "classType": 0
+    },
+    {
+      "path_id": 8152244496610467061,
+      "guid": "56685d71-e01c-4fe1-bf91-ac757a94b425",
+      "name": "Demolitionist",
+      "classType": 1
+    },
+    {
+      "path_id": 6328415867623839384,
+      "guid": "9b09b0c0-2618-4840-b961-42a416f3940a",
+      "name": "Maintenance Worker",
+      "classType": 1
+    },
+    {
+      "path_id": -2607962071608242801,
+      "guid": "f8d79e8f-b005-44dc-801b-3240c8192c1f",
+      "name": "Tinkerer",
+      "classType": 1
+    },
+    {
+      "path_id": -7913360973553420538,
+      "guid": "c6eba1a7-250f-4142-8212-606d403dfac2",
+      "name": "Heavy Gunner",
+      "classType": 2
+    },
+    {
+      "path_id": -9102171951854261339,
+      "guid": "7d383065-ca05-4de8-a7e5-8281e1bcb32f",
+      "name": "Juggernaut",
+      "classType": 2
+    },
+    {
+      "path_id": -3150005630660819870,
+      "guid": "9e515194-6325-4d2c-8053-ca61415ea0fe",
+      "name": "Weapons Specialist",
+      "classType": 2
+    },
+    {
+      "path_id": 4489114503842186517,
+      "guid": "fdf79de1-a00e-41b1-a752-5717a8c2fb60",
+      "name": "Classic",
+      "classType": 3
+    },
+    {
+      "path_id": 4792384372432962618,
+      "guid": "43ac1262-94bf-43a9-956c-2c42b67034fd",
+      "name": "Recon",
+      "classType": 3
+    },
+    {
+      "path_id": 6043141409422215800,
+      "guid": "0326121b-2305-470d-b6ff-10b077201633",
+      "name": "Sharp Shooter",
+      "classType": 3
+    },
+    {
+      "path_id": -1980366624940983181,
+      "guid": "2332565d-7677-4caa-bff0-e869c9317737",
+      "name": "Contractor",
+      "classType": 4
+    },
+    {
+      "path_id": 2538480251876723749,
+      "guid": "21ed188a-6687-401f-b652-d28066f87545",
+      "name": "Gridrunner",
+      "classType": 4
+    },
+    {
+      "path_id": -7489972955027451769,
+      "guid": "c3c80c91-b00b-46c8-91e2-c7671b18e0c3",
+      "name": "Operator",
+      "classType": 4
+    }
+  ],
+  "classModNames": {
+    "ce29ce82-bda9-4307-b877-d3f430ed5ec3": "Foreman",
+    "93c2b272-16fd-495d-918b-e18ede618edb": "Interrogator",
+    "fc6bcbc9-af3f-484c-a387-e10da805e70c": "Strong Armed",
+    "56685d71-e01c-4fe1-bf91-ac757a94b425": "Demolitionist",
+    "9b09b0c0-2618-4840-b961-42a416f3940a": "Maintenance Worker",
+    "f8d79e8f-b005-44dc-801b-3240c8192c1f": "Tinkerer",
+    "c6eba1a7-250f-4142-8212-606d403dfac2": "Heavy Gunner",
+    "7d383065-ca05-4de8-a7e5-8281e1bcb32f": "Juggernaut",
+    "9e515194-6325-4d2c-8053-ca61415ea0fe": "Weapons Specialist",
+    "fdf79de1-a00e-41b1-a752-5717a8c2fb60": "Classic",
+    "43ac1262-94bf-43a9-956c-2c42b67034fd": "Recon",
+    "0326121b-2305-470d-b6ff-10b077201633": "Sharp Shooter",
+    "2332565d-7677-4caa-bff0-e869c9317737": "Contractor",
+    "21ed188a-6687-401f-b652-d28066f87545": "Gridrunner",
+    "c3c80c91-b00b-46c8-91e2-c7671b18e0c3": "Operator"
+  },
+  "classModMasteryChallenges": [
+    {
+      "path_id": 4857753956065686439,
+      "guid": "7ff4b0b3-909b-429c-b609-51b9c6c90b1a",
+      "name": "Classic",
+      "refName": "CD_Gladiator_SCOUT_Classic",
+      "classModGuid": "fdf79de1-a00e-41b1-a752-5717a8c2fb60",
+      "classModName": "Classic",
+      "classType": 3,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 3553695345607885454,
+      "guid": "2052d37e-fb63-461e-8713-3162da9f30a8",
+      "name": "Contractor",
+      "refName": "CD_Gladiator_SCOUT_Classic",
+      "classModGuid": "2332565d-7677-4caa-bff0-e869c9317737",
+      "classModName": "Contractor",
+      "classType": 4,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": -5912505665804105536,
+      "guid": "9afc52c3-0ea0-4db0-b497-6abde4d88ffe",
+      "name": "Demolitionist",
+      "refName": "CD_Gladiator_ENGINEER_Demolitionist",
+      "classModGuid": "56685d71-e01c-4fe1-bf91-ac757a94b425",
+      "classModName": "Demolitionist",
+      "classType": 1,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": -7955042672518883,
+      "guid": "bafc21cb-92e7-44b8-8beb-1ae1c996146a",
+      "name": "Foreman",
+      "refName": "CD_Gladiator_DRILLER_Foreman",
+      "classModGuid": "ce29ce82-bda9-4307-b877-d3f430ed5ec3",
+      "classModName": "Foreman",
+      "classType": 0,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": -1598697158620798257,
+      "guid": "1a734821-537a-4277-8a40-fe0c39cba2a8",
+      "name": "Gridrunner",
+      "refName": "CD_Gladiator_SCOUT_Classic",
+      "classModGuid": "21ed188a-6687-401f-b652-d28066f87545",
+      "classModName": "Gridrunner",
+      "classType": 4,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": -3811999479460158166,
+      "guid": "9dc3574d-45df-4f10-827e-86ac13bfa2f2",
+      "name": "Heavy Gunner",
+      "refName": "CD_Gladiator_GUNNER_Heavy Gunner",
+      "classModGuid": "c6eba1a7-250f-4142-8212-606d403dfac2",
+      "classModName": "Heavy Gunner",
+      "classType": 2,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 2999703242851373543,
+      "guid": "23c5f89a-00d2-4df4-a498-17f849c7a293",
+      "name": "Interrogator",
+      "refName": "CD_Gladiator_DRILLER_Interrogator",
+      "classModGuid": "93c2b272-16fd-495d-918b-e18ede618edb",
+      "classModName": "Interrogator",
+      "classType": 0,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": -3131671593311187059,
+      "guid": "82112d0f-dc8e-41d7-b2af-1442d1ba776a",
+      "name": "Juggernaut",
+      "refName": "CD_Gladiator_GUNNER_Juggernaut",
+      "classModGuid": "7d383065-ca05-4de8-a7e5-8281e1bcb32f",
+      "classModName": "Juggernaut",
+      "classType": 2,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 59349167654321677,
+      "guid": "54ff9240-a667-4306-9ed9-908161ee8608",
+      "name": "Maintenance Worker",
+      "refName": "CD_Gladiator_ENGINEER_Maintenance Worker",
+      "classModGuid": "9b09b0c0-2618-4840-b961-42a416f3940a",
+      "classModName": "Maintenance Worker",
+      "classType": 1,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 512384951056419452,
+      "guid": "f2dd2a95-0a99-44f2-bec1-be899ddad613",
+      "name": "Operator",
+      "refName": "CD_Gladiator_SCOUT_Classic",
+      "classModGuid": "c3c80c91-b00b-46c8-91e2-c7671b18e0c3",
+      "classModName": "Operator",
+      "classType": 4,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 5901945129328603055,
+      "guid": "faa4ffba-91bf-405a-a228-6ab0478ff48f",
+      "name": "Recon",
+      "refName": "CD_Gladiator_SCOUT_Recon",
+      "classModGuid": "43ac1262-94bf-43a9-956c-2c42b67034fd",
+      "classModName": "Recon",
+      "classType": 3,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 607291691951250982,
+      "guid": "d190fecd-702a-47ee-ae73-75a9559a378a",
+      "name": "Sharp Shooter",
+      "refName": "CD_Gladiator_SCOUT_Sharp Shooter",
+      "classModGuid": "0326121b-2305-470d-b6ff-10b077201633",
+      "classModName": "Sharp Shooter",
+      "classType": 3,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 3632978293130806253,
+      "guid": "284f6043-4e0b-49c5-82a6-625c0d86850c",
+      "name": "Strong Armed",
+      "refName": "CD_Gladiator_DRILLER_Strong Armed",
+      "classModGuid": "fc6bcbc9-af3f-484c-a387-e10da805e70c",
+      "classModName": "Strong Armed",
+      "classType": 0,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": -3149096990065672956,
+      "guid": "e9b55351-a126-455a-a03d-0211c87f40c9",
+      "name": "Tinkerer",
+      "refName": "CD_Gladiator_ENGINEER_Tinkerer",
+      "classModGuid": "f8d79e8f-b005-44dc-801b-3240c8192c1f",
+      "classModName": "Tinkerer",
+      "classType": 1,
+      "minHazIndex": 2
+    },
+    {
+      "path_id": 3908822124401323446,
+      "guid": "28c9f76f-b3a3-4404-9882-59bc61f186ae",
+      "name": "Weapons Specialist",
+      "refName": "CD_Gladiator_GUNNER_Weapons Specialist",
+      "classModGuid": "9e515194-6325-4d2c-8053-ca61415ea0fe",
+      "classModName": "Weapons Specialist",
+      "classType": 2,
+      "minHazIndex": 2
+    }
+  ],
+  "challengesByClassMod": {
+    "fdf79de1-a00e-41b1-a752-5717a8c2fb60": [
+      {
+        "path_id": 4857753956065686439,
+        "guid": "7ff4b0b3-909b-429c-b609-51b9c6c90b1a",
+        "name": "Classic",
+        "refName": "CD_Gladiator_SCOUT_Classic",
+        "classModGuid": "fdf79de1-a00e-41b1-a752-5717a8c2fb60",
+        "classModName": "Classic",
+        "classType": 3,
+        "minHazIndex": 2
+      }
+    ],
+    "2332565d-7677-4caa-bff0-e869c9317737": [
+      {
+        "path_id": 3553695345607885454,
+        "guid": "2052d37e-fb63-461e-8713-3162da9f30a8",
+        "name": "Contractor",
+        "refName": "CD_Gladiator_SCOUT_Classic",
+        "classModGuid": "2332565d-7677-4caa-bff0-e869c9317737",
+        "classModName": "Contractor",
+        "classType": 4,
+        "minHazIndex": 2
+      }
+    ],
+    "56685d71-e01c-4fe1-bf91-ac757a94b425": [
+      {
+        "path_id": -5912505665804105536,
+        "guid": "9afc52c3-0ea0-4db0-b497-6abde4d88ffe",
+        "name": "Demolitionist",
+        "refName": "CD_Gladiator_ENGINEER_Demolitionist",
+        "classModGuid": "56685d71-e01c-4fe1-bf91-ac757a94b425",
+        "classModName": "Demolitionist",
+        "classType": 1,
+        "minHazIndex": 2
+      }
+    ],
+    "ce29ce82-bda9-4307-b877-d3f430ed5ec3": [
+      {
+        "path_id": -7955042672518883,
+        "guid": "bafc21cb-92e7-44b8-8beb-1ae1c996146a",
+        "name": "Foreman",
+        "refName": "CD_Gladiator_DRILLER_Foreman",
+        "classModGuid": "ce29ce82-bda9-4307-b877-d3f430ed5ec3",
+        "classModName": "Foreman",
+        "classType": 0,
+        "minHazIndex": 2
+      }
+    ],
+    "21ed188a-6687-401f-b652-d28066f87545": [
+      {
+        "path_id": -1598697158620798257,
+        "guid": "1a734821-537a-4277-8a40-fe0c39cba2a8",
+        "name": "Gridrunner",
+        "refName": "CD_Gladiator_SCOUT_Classic",
+        "classModGuid": "21ed188a-6687-401f-b652-d28066f87545",
+        "classModName": "Gridrunner",
+        "classType": 4,
+        "minHazIndex": 2
+      }
+    ],
+    "c6eba1a7-250f-4142-8212-606d403dfac2": [
+      {
+        "path_id": -3811999479460158166,
+        "guid": "9dc3574d-45df-4f10-827e-86ac13bfa2f2",
+        "name": "Heavy Gunner",
+        "refName": "CD_Gladiator_GUNNER_Heavy Gunner",
+        "classModGuid": "c6eba1a7-250f-4142-8212-606d403dfac2",
+        "classModName": "Heavy Gunner",
+        "classType": 2,
+        "minHazIndex": 2
+      }
+    ],
+    "93c2b272-16fd-495d-918b-e18ede618edb": [
+      {
+        "path_id": 2999703242851373543,
+        "guid": "23c5f89a-00d2-4df4-a498-17f849c7a293",
+        "name": "Interrogator",
+        "refName": "CD_Gladiator_DRILLER_Interrogator",
+        "classModGuid": "93c2b272-16fd-495d-918b-e18ede618edb",
+        "classModName": "Interrogator",
+        "classType": 0,
+        "minHazIndex": 2
+      }
+    ],
+    "7d383065-ca05-4de8-a7e5-8281e1bcb32f": [
+      {
+        "path_id": -3131671593311187059,
+        "guid": "82112d0f-dc8e-41d7-b2af-1442d1ba776a",
+        "name": "Juggernaut",
+        "refName": "CD_Gladiator_GUNNER_Juggernaut",
+        "classModGuid": "7d383065-ca05-4de8-a7e5-8281e1bcb32f",
+        "classModName": "Juggernaut",
+        "classType": 2,
+        "minHazIndex": 2
+      }
+    ],
+    "9b09b0c0-2618-4840-b961-42a416f3940a": [
+      {
+        "path_id": 59349167654321677,
+        "guid": "54ff9240-a667-4306-9ed9-908161ee8608",
+        "name": "Maintenance Worker",
+        "refName": "CD_Gladiator_ENGINEER_Maintenance Worker",
+        "classModGuid": "9b09b0c0-2618-4840-b961-42a416f3940a",
+        "classModName": "Maintenance Worker",
+        "classType": 1,
+        "minHazIndex": 2
+      }
+    ],
+    "c3c80c91-b00b-46c8-91e2-c7671b18e0c3": [
+      {
+        "path_id": 512384951056419452,
+        "guid": "f2dd2a95-0a99-44f2-bec1-be899ddad613",
+        "name": "Operator",
+        "refName": "CD_Gladiator_SCOUT_Classic",
+        "classModGuid": "c3c80c91-b00b-46c8-91e2-c7671b18e0c3",
+        "classModName": "Operator",
+        "classType": 4,
+        "minHazIndex": 2
+      }
+    ],
+    "43ac1262-94bf-43a9-956c-2c42b67034fd": [
+      {
+        "path_id": 5901945129328603055,
+        "guid": "faa4ffba-91bf-405a-a228-6ab0478ff48f",
+        "name": "Recon",
+        "refName": "CD_Gladiator_SCOUT_Recon",
+        "classModGuid": "43ac1262-94bf-43a9-956c-2c42b67034fd",
+        "classModName": "Recon",
+        "classType": 3,
+        "minHazIndex": 2
+      }
+    ],
+    "0326121b-2305-470d-b6ff-10b077201633": [
+      {
+        "path_id": 607291691951250982,
+        "guid": "d190fecd-702a-47ee-ae73-75a9559a378a",
+        "name": "Sharp Shooter",
+        "refName": "CD_Gladiator_SCOUT_Sharp Shooter",
+        "classModGuid": "0326121b-2305-470d-b6ff-10b077201633",
+        "classModName": "Sharp Shooter",
+        "classType": 3,
+        "minHazIndex": 2
+      }
+    ],
+    "fc6bcbc9-af3f-484c-a387-e10da805e70c": [
+      {
+        "path_id": 3632978293130806253,
+        "guid": "284f6043-4e0b-49c5-82a6-625c0d86850c",
+        "name": "Strong Armed",
+        "refName": "CD_Gladiator_DRILLER_Strong Armed",
+        "classModGuid": "fc6bcbc9-af3f-484c-a387-e10da805e70c",
+        "classModName": "Strong Armed",
+        "classType": 0,
+        "minHazIndex": 2
+      }
+    ],
+    "f8d79e8f-b005-44dc-801b-3240c8192c1f": [
+      {
+        "path_id": -3149096990065672956,
+        "guid": "e9b55351-a126-455a-a03d-0211c87f40c9",
+        "name": "Tinkerer",
+        "refName": "CD_Gladiator_ENGINEER_Tinkerer",
+        "classModGuid": "f8d79e8f-b005-44dc-801b-3240c8192c1f",
+        "classModName": "Tinkerer",
+        "classType": 1,
+        "minHazIndex": 2
+      }
+    ],
+    "9e515194-6325-4d2c-8053-ca61415ea0fe": [
+      {
+        "path_id": 3908822124401323446,
+        "guid": "28c9f76f-b3a3-4404-9882-59bc61f186ae",
+        "name": "Weapons Specialist",
+        "refName": "CD_Gladiator_GUNNER_Weapons Specialist",
+        "classModGuid": "9e515194-6325-4d2c-8053-ca61415ea0fe",
+        "classModName": "Weapons Specialist",
+        "classType": 2,
+        "minHazIndex": 2
+      }
+    ]
   }
 };

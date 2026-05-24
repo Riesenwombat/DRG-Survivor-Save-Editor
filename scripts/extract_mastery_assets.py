@@ -63,7 +63,25 @@ def extract_weapons(objects):
     return weapons_by_path
 
 
-def extract_challenges(objects, weapons_by_path):
+def extract_class_mods(objects):
+    class_mods_by_path = {}
+    for path_id, tree in objects.items():
+        if "MasteryStatMod" not in tree or "PossibleClasses" not in tree:
+            continue
+        guid = get_guid(tree)
+        name = tree.get("RefName") or tree.get("m_Name")
+        if not guid or not name:
+            continue
+        class_mods_by_path[path_id] = {
+            "path_id": path_id,
+            "guid": guid,
+            "name": str(name).strip('"'),
+            "classType": tree.get("DefaultClass"),
+        }
+    return class_mods_by_path
+
+
+def extract_weapon_challenges(objects, weapons_by_path):
     challenges = []
     for path_id, tree in objects.items():
         if tree.get("ChallengeType") != 6:
@@ -88,21 +106,65 @@ def extract_challenges(objects, weapons_by_path):
     return sorted(challenges, key=lambda entry: (entry.get("weaponName") or "", entry["name"]))
 
 
-def make_web_data(weapons_by_path, challenges):
-    challenge_weapon_guids = {challenge.get("weaponGuid") for challenge in challenges if challenge.get("weaponGuid")}
+def extract_class_mod_challenges(objects, class_mods_by_path):
+    challenges = []
+    for path_id, tree in objects.items():
+        if tree.get("ChallengeType") != 7:
+            continue
+        class_mod = class_mods_by_path.get(ref_path_id(tree.get("FixedClassMod")))
+        guid = get_guid(tree)
+        if not guid:
+            continue
+        title = local_variable(tree, "classModName") or tree.get("RefName") or tree.get("m_Name")
+        challenges.append(
+            {
+                "path_id": path_id,
+                "guid": guid,
+                "name": str(title).strip('"'),
+                "refName": tree.get("RefName") or tree.get("m_Name"),
+                "classModGuid": class_mod.get("guid") if class_mod else None,
+                "classModName": class_mod.get("name") if class_mod else None,
+                "classType": class_mod.get("classType") if class_mod else None,
+                "minHazIndex": tree.get("MinHazIndex"),
+            }
+        )
+    return sorted(challenges, key=lambda entry: (entry.get("classModName") or "", entry["name"]))
+
+
+def make_web_data(weapons_by_path, weapon_challenges, class_mods_by_path, class_mod_challenges):
+    challenge_weapon_guids = {
+        challenge.get("weaponGuid") for challenge in weapon_challenges if challenge.get("weaponGuid")
+    }
     weapons = sorted(
         [weapon for weapon in weapons_by_path.values() if weapon["guid"] in challenge_weapon_guids],
         key=lambda weapon: weapon["name"],
     )
     challenges_by_weapon = {}
-    for challenge in challenges:
+    for challenge in weapon_challenges:
         weapon_guid = challenge.get("weaponGuid") or ""
         challenges_by_weapon.setdefault(weapon_guid, []).append(challenge)
+
+    challenge_class_mod_guids = {
+        challenge.get("classModGuid") for challenge in class_mod_challenges if challenge.get("classModGuid")
+    }
+    class_mods = sorted(
+        [class_mod for class_mod in class_mods_by_path.values() if class_mod["guid"] in challenge_class_mod_guids],
+        key=lambda class_mod: (class_mod.get("classType") or 0, class_mod["name"]),
+    )
+    challenges_by_class_mod = {}
+    for challenge in class_mod_challenges:
+        class_mod_guid = challenge.get("classModGuid") or ""
+        challenges_by_class_mod.setdefault(class_mod_guid, []).append(challenge)
+
     return {
         "weapons": weapons,
         "weaponNames": {weapon["guid"]: weapon["name"] for weapon in weapons},
-        "weaponMasteryChallenges": challenges,
+        "weaponMasteryChallenges": weapon_challenges,
         "challengesByWeapon": challenges_by_weapon,
+        "classMods": class_mods,
+        "classModNames": {class_mod["guid"]: class_mod["name"] for class_mod in class_mods},
+        "classModMasteryChallenges": class_mod_challenges,
+        "challengesByClassMod": challenges_by_class_mod,
     }
 
 
@@ -115,8 +177,10 @@ def main():
 
     objects = read_objects(args.paths)
     weapons_by_path = extract_weapons(objects)
-    challenges = extract_challenges(objects, weapons_by_path)
-    result = make_web_data(weapons_by_path, challenges)
+    class_mods_by_path = extract_class_mods(objects)
+    weapon_challenges = extract_weapon_challenges(objects, weapons_by_path)
+    class_mod_challenges = extract_class_mod_challenges(objects, class_mods_by_path)
+    result = make_web_data(weapons_by_path, weapon_challenges, class_mods_by_path, class_mod_challenges)
 
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
